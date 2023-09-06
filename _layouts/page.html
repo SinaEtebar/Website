@@ -1,0 +1,15 @@
+---
+layout: default
+---
+<article {% if page.feature-img %}class="feature-image"{% endif %}>
+  <header style="background-image: url('{{ site.baseurl }}/{{ page.feature-img }}')">
+    <h1 class="title">{{ page.feature-title | default: page.title }}</h1>
+    {% if page.subtitle %}<h2 class="subtitle">{{ page.subtitle }}</h2>{% endif %}
+  </header>
+  <p style="text-align:center">
+  <section class="post-content">{{ content }}</section>
+  </p>
+</article>
+
+<table cellpadding="0" cellspacing="0" border="0"> 
+</table> 
