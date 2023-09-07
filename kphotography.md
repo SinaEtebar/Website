@@ -8,7 +8,7 @@ permalink: /photography/
   <div class="folder">
     <div class="picturebox landscape">
       <a href="/assets/img/20171207_152007.JPG" data-lightbox="mylightbox" data-title="heavy winter. Iran 2017. Copyright Sina Etebar 2017. ">
-        <img alt="Picture copyright Sina Etebar." src="/assets/img/20171207_152007.JPG" />
+        <img alt="Picture copyright Sina Etebar." src="/assets/img/20171207_152007.JPG/" />
       </a>
     </div>
     <div class="picturebox landscape">
