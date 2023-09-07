@@ -7,13 +7,13 @@ permalink: /photography/
  <section class="post-content"><div class="photography">
   <div class="folder">
     <div class="picturebox landscape">
-      <a href="/assets/img/20171207_152007.JPG" data-lightbox="mylightbox" data-title="heavy winter. Iran 2017. Copyright Sina Etebar 2017. ">
-        <img alt="Picture copyright Sina Etebar." src="/assets/img/20171207_152007.JPG/" />
+      <a href="/assets/img/20171207_152007.jpg" data-lightbox="mylightbox" data-title="heavy winter. Iran 2017. Copyright Sina Etebar 2017. ">
+        <img alt="Picture copyright Sina Etebar." src="/assets/img/20171207_152007.jpg" />
       </a>
     </div>
     <div class="picturebox landscape">
-      <a href="/assets/img/20180110_171711.JPG" data-lightbox="mylightbox" data-title="Laleh park. Iran 2017. Copyright Sina Etebar 2018.">
-        <img alt="Picture copyright Sina Etebar." src="/assets/img/20180110_171711.JPG/" />
+      <a href="/assets/img/20180110_171711.jpg" data-lightbox="mylightbox" data-title="Laleh park. Iran 2017. Copyright Sina Etebar 2018.">
+        <img alt="Picture copyright Sina Etebar." src="/assets/img/20180110_171711.jpg" />
       </a>
     </div>
     <div class="picturebox landscape">
