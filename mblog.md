@@ -19,7 +19,7 @@ permalink: /blog/
         </p>
       </header>
       <div class="excerpt">
-in various subjects
+      QFT chapter 2 solving problems<br>
 
         <a class="button" href="/2014/11/28//2014/11/29/feature-images.html">
           Continue reading
