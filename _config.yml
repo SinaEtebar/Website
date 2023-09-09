@@ -1,6 +1,6 @@
 # SITE CONFIGURATION
 baseurl: ""
-url: ""
+url: "https://sinaetebar.net"
 
 # THEME-SPECIFIC CONFIGURATION 
 theme_settings:
