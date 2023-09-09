@@ -11,7 +11,7 @@ permalink: /blog/
       <header>
         <h1>
           <a class="post-link" href="/2014/11/29/feature-images.html">
-            writing my blog about how to solw different problems
+            writing my blog about how to solve different problems
           </a>
         </h1>
         <p class="meta">
