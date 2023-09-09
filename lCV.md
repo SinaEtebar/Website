@@ -9,9 +9,9 @@ permalink: /cv/
 
 <div class="cv">
   <a class="octocat" href="/assets/pdf/cv.pdf">
-    <div style="margin-left: 15.5em" >
-      <div class="fa fa-5x fa-fw fa-file-pdf-o" style="margin-left: 0.7em"></div>
-      <div style="margin-top: 1.8ex">Read the complete version as PDF</div>
+      <div>
+      <div class="fa fa-5x fa-fw fa-file-pdf-o" style="margin-bottom: 0.3ex"></div>
+      <div>Read the complete version as PDF</div>
     </div>
   </a>
 
