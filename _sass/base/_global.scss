@@ -12,6 +12,7 @@ figure {
 }
 html {
   background: $background-color;
+  /*min-width: 50em;*/
 }
 
 // Typography
@@ -27,47 +28,30 @@ body {
   font-size: $font-size;
   word-wrap: break-word;
 }
-h1, h2, h3, h5, h6{
+h1, h2, h3, h4, h5, h6 {
   font-family: $font-family-headings;
-  line-height: 1.2;
+  line-height: 1.3;
   margin: 0.67em 0;
   a {
-    color: $link-color;
+    color: $text-color;
   }
 }
-h4{
-  font-family: $font-size;
-  line-height: 1.2;
-  margin: 0.67em 0;
-  a {
-    color: $link-color;
-  }
-} 
-  p {
-    font-family: $font-family-headings;
-    line-height: 1.2;
-    margin: 0.67em 0;
-    a {
-      color: $link-color;
-    }
-    text-align: justify;
-}
-
 h1 {
-  font-size: 2.5em;
+  font-size: 2.0em;
 }
 h2 {
-  font-size: 1.33em;
+  font-size: 1.6em;
 }
 h3 {
-  font-size: 1.5em;
+  font-size: 1.3em;
 }
-p {
-  font-size: 1.33em;
+h4 {
+  font-size: 1.15em;
 }
 blockquote {
-    border-left: 2px solid;
-    padding: 1em 1em;
+    border-left: 4px solid;
+    border-color: gray;
+    padding: 1em 0em 1em 1em;
 }
 blockquote p:last-child,
 footer p:last-child {
@@ -75,51 +59,18 @@ footer p:last-child {
 }
 table {
   table-layout:fixed;
-  border-collapse: collapse;
-  width: 100%;
-  font-size: 0.8em;
-  text-align: left;
-  a {
-    color: $link-color;
+  width:100%;
+  word-wrap:break-word;
+  @media (max-width: 1100px) {
+    overflow-x: scroll;
+    display: inline-block;
   }
 }
-table td:last-child {
-  text-align: left;
-  text-align: justify;
-  width: 50%
-}
-
-
-table tr:first-child {
-  border-top: 0;
-}
-table tr:last-child {
-  border-bottom: 0;
-}
-tr {
-  border-bottom: 1px solid #ddd;
-  border-top: 1px solid #ddd;
-}
-
-tr:hover td {
-  border-bottom: 1px solid $link-color;
-  border-top: 1px solid $link-color;
-}
-tr:hover {
-  border-left: 1px solid $link-color;
-  border-right: 1px solid $link-color;
-}
-
-td {
-  padding: 0.55em;
-}
-
-
-td {
-  vertical-align: middle;
-}
+td,
 th {
-  vertical-align: middle;
+  padding: 0.5em 1em;
+  border: 1px solid $border-color;
+  text-align: left;
 }
 table,
 dl,
@@ -129,7 +80,6 @@ kbd,
 pre,
 samp {
   margin: 1em 0;
-  margin-bottom: 3em;
 }
 dt {
   font-weight: bold;
@@ -151,18 +101,6 @@ li > ul, li > ol {
     margin-bottom: 0;
     margin-left: 1em;
 }
-li {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  font-size: 1.3em;
-  line-height: 1.3;
-  float: left;
-  text-align: center;
-  margin-left: 17.3em;
-  margin-top: 1.7em;
-  margin-right: -16.5em;
-}
 ol, ul {
   list-style-position: inside;
 }
@@ -172,12 +110,10 @@ hr {
   border-bottom: 1px solid #fff;
   margin: 1em 0;
 }
-
 a {
-  color: $header-link-color;
+  color: $link-color;
   text-decoration: none;
 }
-
 .nav {
   list-style: none;
   margin: 0;
