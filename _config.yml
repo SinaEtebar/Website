@@ -9,7 +9,7 @@ theme_settings:
   avatar: assets/img/sina.png
   favicon: assets/favicon-32x32.png
   gravatar: # Email MD5 hash
-  description: "A website with blog posts and pages" # used by search engines
+  description: "Sina Etebar website" # used by search engines
 
   # Header and footer text
   footer_text: >
@@ -21,7 +21,7 @@ theme_settings:
   behance:
   bitbucket: sinaetebar 
   dribbble:
-  facebook: sinaetebar
+  facebook: sina etebar
   flickr:
   gitlab:
   github: "SinaEtebar"
