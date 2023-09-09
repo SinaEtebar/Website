@@ -18,7 +18,7 @@ permalink: /cv/
 <table class="cv-table">
    <tr>
     <td>Sep 2020 – Sep 2023</td>
-    <td><img alt="Isfahan University of Technology" src="/assets/img/cv/IUT.png"  width="90" height="90"/>
+    <td><img alt="Isfahan University of Technology" src="/assets/img/cv/IUT.png"  width="75" height="90"/>
     </td>
     <td>
       Teacher Assistant for Analytical Mechanics1, Analytical Mechanics2, Electromagnetism1 and Modern Physics 
@@ -26,7 +26,7 @@ permalink: /cv/
    </tr>
    <tr>
     <td>Jan 2021</td>
-    <td><img alt="IN2P3 School of Statistics SOS2021" src="/assets/img/cv/SOS.png"  width="150" height="100"/>
+    <td><img alt="IN2P3 School of Statistics SOS2021" src="/assets/img/cv/SOS.png"  width="130" height="100"/>
     </td>
     <td>
       I attended the <a href="/assets/img/cv/sos2021.pdf"> IN2P3 School of Statistics SOS2021</a>, which was held online from January 18 to 29, 2021. The program consisted of eleven lectures, each lasting 1.5 hours, and three hands-on sessions, each lasting 3 hours.
@@ -43,7 +43,7 @@ permalink: /cv/
    <tr>
     <td>2020 </td>
     <td>
-    <img alt="Silver medal" src="/assets/img/cv/silver.png"  width="70" height="90"/>
+    <img alt="Silver medal" src="/assets/img/cv/silver.png"  width="60" height="90"/>
     </td>
     <td>
        <a href="/assets/img/cv/University Physics Competition .jpg">Awarded a Silver Medal</a> in <a href="http://www.uphysicsc.com/">The University Physics Competition</a>, a prestigious academic contest that tests knowledge and problem-solving skills in physics. 
@@ -62,7 +62,7 @@ permalink: /cv/
    </tr>
    <tr>
     <td>Sep 2020 </td>
-    <td><img alt="Vienna Summer School" src="/assets/img/cv/vienna.png"  width="200" height="100"/>
+    <td><img alt="Vienna Summer School" src="/assets/img/cv/vienna.png"  width="150" height="100"/>
     </td>
     <td>
       I attended the <a href="/assets/img/cv/Etebar.pdf"> 2020 Vienna Summer School on Gravitational Quantum Physics </a>
@@ -70,7 +70,7 @@ permalink: /cv/
    </tr>
    <tr>
     <td>Sep 2017 – Sep 2021</td>
-    <td><img alt="Isfahan University of Technology" src="/assets/img/cv/IUT.png"  width="90" height="90"/>
+    <td><img alt="Isfahan University of Technology" src="/assets/img/cv/IUT.png"  width="75" height="90"/>
     </td>
     <td>
       Bachelor studies in Physics at <a href="https://english.iut.ac.ir/"> Isfahan University of Technology</a>. Thesis: "The Role of Sterile Neutrinos to Explain Various Anomalies Observed in Neutrino Oscillation Experiments"
@@ -78,7 +78,7 @@ permalink: /cv/
    </tr>
    <tr>
     <td>Oct 2013 – Aug 2017</td>
-    <td><img alt="Sampad school" src="/assets/img/cv/sampad.png"  width="90" height="90"/>
+    <td><img alt="Sampad school" src="/assets/img/cv/sampad.png"  width="80" height="90"/>
     </td>
     <td>
       High School Diploma in Mathematicas & Physics Discipline at
