@@ -6,7 +6,7 @@ permalink: /cv/
 ---
 
 
-<font size="+2">
+
 <div class="cv">
   <a class="octocat" href="/assets/pdf/cv.pdf">
     <div style="margin-left: 15.5em" >
