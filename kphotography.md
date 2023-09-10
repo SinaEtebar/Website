@@ -37,17 +37,17 @@ permalink: /photography/
       </a>
     </div>
   <div class="picturebox landscape">
-      <a href="/assets/img/20180510_201007.jpg" data-lightbox="mylightbox" data-title="Spring. Iran 2018. Copyright Sina Etebar 2018.">
+      <a href="/assets/img/20180510_201007.jpg" data-lightbox="mylightbox" data-title="Tehran. Iran 2018. Copyright Sina Etebar 2018.">
         <img alt="Picture copyright Sina Etebar." src="/assets/img/20180510_201007.jpg" />
       </a>
     </div>
     <div class="picturebox landscape">
-      <a href="/assets/img/20180621_111246.jpg" data-lightbox="mylightbox" data-title="Spring. Iran 2018. Copyright Sina Etebar 2018.">
+      <a href="/assets/img/20180621_111246.jpg" data-lightbox="mylightbox" data-title="Isfahan. Iran 2018. Copyright Sina Etebar 2018.">
         <img alt="Picture copyright Sina Etebar." src="/assets/img/20180621_111246.jpg" />
       </a>
     </div>
     <div class="picturebox landscape">
-      <a href="/assets/img/20180704_131639.jpg" data-lightbox="mylightbox" data-title="Spring. Iran 2018. Copyright Sina Etebar 2018.">
+      <a href="/assets/img/20180704_131639.jpg" data-lightbox="mylightbox" data-title="Tabriz. Iran 2018. Copyright Sina Etebar 2018.">
         <img alt="Picture copyright Sina Etebar." src="/assets/img/20180704_131639.jpg" />
       </a>
     </div>
