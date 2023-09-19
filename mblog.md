@@ -26,4 +26,24 @@ permalink: /blog/
       </div>
    </div>
 
+  <div class="post-teaser">
+      <header>
+        <h1>
+          <a class="post-link" href="/2022/10/30/QFT.html">
+            Quantum Field Theory
+          </a>
+        </h1>
+        <p class="meta">
+          October 30, 2022
+        </p>
+      </header>
+      <div class="excerpt">
+      Quantum Field Theory (QFT) is a theoretical framework for physics that combines the ideas of classical field theory and quantum mechanics. It is a cornerstone of contemporary theoretical physics and is essential to our comprehension of the fundamental forces and particles in the cosmos.<br>
+        <a class="button" href="/2022/10/30/QFT.html">
+          Continue reading
+        </a>
+      </div>
+   </div>
+
+
  </div>
