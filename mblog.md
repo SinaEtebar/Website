@@ -46,4 +46,23 @@ permalink: /blog/
    </div>
 
 
+<div class="post-teaser">
+      <header>
+        <h1>
+          <a class="post-link" href="/2023/09/20/ClassicalElectrodynamics.html">
+            Classical Electrodynamics
+          </a>
+        </h1>
+        <p class="meta">
+          September 30, 2023
+        </p>
+      </header>
+      <div class="excerpt">
+      Classical Electrodynamics is the branch of theoretical physics that studies the interactions between electric charges and currents using classical principles, without involving quantum mechanics. It's a fundamental theory that describes how electric and magnetic fields behave and how they influence the motion of charged particles.<br>
+        <a class="button" href="/2023/09/20/ClassicalElectrodynamics.html">
+          Continue reading
+        </a>
+      </div>
+   </div>
+
  </div>
