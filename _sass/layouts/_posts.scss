@@ -1,19 +1,26 @@
 .post-content > :last-child {
   margin-bottom: 0;
 }
+
 article,
 .comments {
-  @extend %padding-regular;
   border-bottom: 1px solid $border-color;
+  @extend %padding-regular;
   float: left;
   width: 100%;
 }
+
 article {
   .subtitle {
     font-size: 1.45em;
     font-weight: normal;
     margin: 0;
   }
+
+  .subtitle > a{
+    color: $link_color;
+  }
+
   header {
     margin-bottom: 6%;
     text-align: center;
