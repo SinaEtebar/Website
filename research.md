@@ -14,7 +14,7 @@ permalink: /research/
   <h2 class="project-title">The Role of Sterile Neutrinos to Explain Various Anomalies Observed in
 Neutrino Oscillation Experiments</h2>
   <div class="project-meta">
-    <div class="context">Thesis (BA Sc. in Physics) at <a href='https://www.en.uni-muenchen.de/'>IUT</a></div>
+    <div class="context">Thesis (BA Sc. in Physics) at <a href='https://english.iut.ac.ir/'>IUT</a></div>
     <div class="time">2021</div>
   </div>
   <div id="buttonContainerBAPhy" style="display:none">
@@ -41,7 +41,7 @@ Neutrino Oscillation Experiments</h2>
   <div class="project-more-information">
     <ul>
       <li>
-        <a href="/assets/pdf/ba_physics.pdf"><span class="fa fa-fw fa-paperclip"></span>Full text [pdf, 8.4MB]</a>
+        <a href="/assets/pdf/ba_physics.pdf"><span class="fa fa-fw fa-paperclip"></span>Full text [pdf, 8.2MB]</a>
       </li>
     </ul>
   </div>
