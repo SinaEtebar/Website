@@ -601,6 +601,7 @@ img[align=right] {
     margin-left: 3%
 }
 
+
 #post-nav,.site-header,.call-out {
     padding: 3% 6%
 }
@@ -766,6 +767,7 @@ header h1 {
     margin: 0
 }
 
+
 .meta,#post-nav p {
     color: rgba(56,56,56,.5);
     font-size: .9em;
@@ -858,6 +860,7 @@ header h1 {
     margin-bottom: 0
 }
 
+
 .badges {
     margin-top: .5em;
     margin-bottom: .5em
@@ -885,7 +888,9 @@ header h1 {
 }
 
 .project {
-    margin: 0 auto;
+    margin-left: -4.2em;
+    margin-right: -4.6em;
+    margin-top: -3.7em;
     max-width: 40em
 }
 
@@ -963,6 +968,7 @@ header h1 {
 .project h2 {
     margin-bottom: 0em
 }
+
 
 .mepage {
     margin: 0 auto;
