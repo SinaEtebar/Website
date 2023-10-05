@@ -36,6 +36,9 @@ Neutrino Oscillation Experiments</h2>
       <p>For my thesis I reviewed various neutrino experiments and explained and reviewed various sterile neutrino models that were used to explain them. </p>
     </div>
     <div id="expertTextBAPhy" class="expert">
+    <p><a href="https://sbn.fnal.gov/">Neutrino short-baseline</a> anomalies refer to puzzling observations in neutrino experiments where neutrinos appear to behave differently than our current understanding predicts. These anomalies have sparked immense interest in the scientific community, leading to investigations that may revolutionize our understanding of neutrino physics.</p>
+    <p>The anomalies arise from experiments involving neutrinos that travel shorter distances, such as those generated in nuclear reactors or accelerators. When observed over short baselines, unexpected deficit neutrino flux or excess in neutrino interactions, particularly electron antineutrinos, has been noticed. These discrepancies challenge the <a href="https://en.wikipedia.org/wiki/Standard_Model">Standard Model of particle physics</a>, indicating potential new physics beyond our current understanding.</p>
+    <p>One proposed solution to these anomalies involves the existence of sterile neutrinos. Sterile neutrinos are hypothetical particles that don't interact via the weak nuclear force, making them exceedingly difficult to detect. If these sterile neutrinos have a small mass and mix with the standard neutrinos, they could lead to the observed anomalies. The presence of sterile neutrinos could create a new type of <a href="https://en.wikipedia.org/wiki/Neutrino_oscillation">neutrino oscillation</a>, where active neutrinos transform into sterile neutrinos over short distances, causing the unexpected experimental results.</p>
     </div>
   </div>
   <div class="project-more-information">
