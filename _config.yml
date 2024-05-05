@@ -8,9 +8,9 @@ theme_settings:
   title: Sina Etebar
   avatar: assets/img/sina.png
   favicon: assets/favicon-32x32.png
-  gravatar: # Email MD5 hash
+  gravatar: #
   description: "Sina Etebar website" # used by search engines
-
+  hack: assets/img/sina.png
   # Header and footer text
   footer_text: >
    <p><a href="/disclaimer/">Copyright & Disclaimer</a></p>
@@ -39,7 +39,7 @@ theme_settings:
   wordpress:
   youtube:
   hackerone: https://hackerone.com/lufan
-  hackeronelogo: assets/img/h1.png
+  
 
   # Scripts
   google_analytics: # Tracking ID, e.g. "UA-000000-01"
