@@ -39,6 +39,7 @@ theme_settings:
   wordpress:
   youtube:
   hackerone: https://hackerone.com/lufan
+  hackeronelogo: assets/img/h1.png
 
   # Scripts
   google_analytics: # Tracking ID, e.g. "UA-000000-01"
