@@ -10,7 +10,7 @@ theme_settings:
   favicon: assets/favicon-32x32.png
   gravatar: #
   description: "Sina Etebar website" # used by search engines
-  hack: assets/img/sina.png
+  
   # Header and footer text
   footer_text: >
    <p><a href="/disclaimer/">Copyright & Disclaimer</a></p>
