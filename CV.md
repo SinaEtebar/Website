@@ -98,7 +98,7 @@ permalink: /cv/
     <td>English</td>
     <td>
       Upper-intermediate (
-      <a href="https://en.wikipedia.org/wiki/Common_European_Framework_of_Reference_for_Languages">C2</a> )
+      <a href="https://en.wikipedia.org/wiki/Common_European_Framework_of_Reference_for_Languages">C1</a> )
     </td>
   </tr> 
   <tr>
