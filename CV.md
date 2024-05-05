@@ -78,7 +78,7 @@ permalink: /cv/
     <td><img alt="Sampad school" src="/assets/img/cv/sampad.png"  width="80" height="90"/>
     </td>
     <td>
-      High School Diploma in Mathematicas & Physics Discipline at
+      High School Diploma in Mathematicas & Physics field at
       <a href='https://en.wikipedia.org/wiki/National_Organization_for_Development_of_Exceptional_Talents'>sampad (National Organization for Development of Exceptional Talents) school </a>in Tabriz.
     </td>
    </tr>
