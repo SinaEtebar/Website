@@ -9,9 +9,10 @@ permalink: /disclaimer/
   <h2>Software</h2>
 
   <ul>
-    <p>Powered by <a href="https://jekyllrb.com/">jekyll</a>.</p>
-    <p>Built on an increasingly modified theme from <a href="https://github.com/rohanchandra">Rohan Chandra</a>: Type Theme (<a href="https://github.com/rohanchandra/type-theme">github</a>, <a href="https://rohanchandra.github.io/type-theme/">demo</a>). It's a beautiful yet simple design and very easy to customize, I definitely recommend it!</p>
-    <p>Using <a href="http://lokeshdhakar.com/projects/lightbox2/">lightbox</a> for the photo popup. It's easy to use and easy to customize, recommending it as well.</p>
+    <li>Powered by <a href="https://jekyllrb.com/">jekyll</a>.</li>
+    <li>Hosted at <a href="https://cloudflare.com/">cloudflare</a>.</li>
+    <li>Built on an increasingly modified theme from <a href="https://github.com/rohanchandra">Rohan Chandra</a>: Type Theme (<a href="https://github.com/rohanchandra/type-theme">github</a>, <a href="https://rohanchandra.github.io/type-theme/">demo</a>). It's a beautiful yet simple design and very easy to customize, I definitely recommend it!</li>
+    <li>Using <a href="http://lokeshdhakar.com/projects/lightbox2/">lightbox</a> for the photo popup. It's easy to use and easy to customize, recommending it as well.</li>
   </ul>
 
   <h2>Formal Disclaimer</h2>
