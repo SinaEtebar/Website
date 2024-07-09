@@ -50,7 +50,7 @@ Neutrino Oscillation Experiments</h2>
   </div>
   <div class="project-picturegroup">
     <div class="project-picturebox" style="max-width: 600px">
-      <img alt="MiniBooNE experiment data" src="/assets/img/research/pic3.png" />
+      <img alt="MiniBooNE experiment data" src="/assets/img/research/miniboone.png" />
       <div class="project-picturetext">The <a href="https://en.wikipedia.org/wiki/MiniBooNE">MiniBooNE</a> neutrino and antineutrino mode visible energy distributions \(E^{QE}_{\nu}\)</div>
     </div>
   </div>
