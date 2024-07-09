@@ -10,12 +10,31 @@ permalink: /blog/
   <div class="post-teaser">
       <header>
         <h1>
+          <a class="post-link" href="/2024/07/07/SolarNeutrinoFlux.html">
+            Plot Solar Neutrino Flux with Python
+          </a>
+        </h1>
+        <p class="meta">
+          July 07, 2024
+        </p>
+      </header>
+      <div class="excerpt">
+      I recently tried to use solar neutrino flux data for calculations and I couldn't find any Python code for plotting them so I did it by myself.<br>
+        <a class="button" href="/2024/07/07/SolarNeutrinoFlux.html">
+          Continue reading
+        </a>
+      </div>
+   </div>
+
+  <div class="post-teaser">
+      <header>
+        <h1>
           <a class="post-link" href="/2022/04/14/sasanian.html">
             Sasanian Empire
           </a>
         </h1>
         <p class="meta">
-          April 20, 2022
+          April 20, 2024
         </p>
       </header>
       <div class="excerpt">
