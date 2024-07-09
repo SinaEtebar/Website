@@ -467,7 +467,7 @@ figure {
 }
 
 html {
-    background: #fff
+    background: #F1F1F1
 }
 
 ::selection {
@@ -479,7 +479,7 @@ html {
 }
 
 body {
-    color: #383838;
+    color: #333333;
     font-family: "Source Sans Pro",Helvetica,Arial,sans-serif;
     font-size: 1.25em;
     word-wrap: break-word
@@ -492,7 +492,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 h1 a,h2 a,h3 a,h4 a,h5 a,h6 a {
-    color: #383838
+    color: #333333
 }
 
 h1 {
@@ -574,12 +574,12 @@ ol,ul {
 hr {
     border: 0;
     border-top: 1px solid rgba(0,0,0,.1);
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid #D3D3D3;
     margin: 1em 0
 }
 
 a {
-    color: #FF8400;
+    color: #800000;
     text-decoration: none
 }
 
@@ -637,15 +637,15 @@ img[align=right] {
 }
 
 .button-link:hover,a.button:hover {
-    background: #FF8400;
-    border: 1px solid #FF8400;
-    color: #fff;
+    background: #800000;
+    border: 1px solid #800000;
+    color: #D3D3D3;
     text-decoration: none
 }
 
 .body-link:hover,.posts .post-teaser p a:hover,article a:hover {
     text-decoration: underline;
-    color: #FF8400
+    color: #800000
 }
 
 .disabled {
@@ -669,9 +669,9 @@ img[align=right] {
 }
 
 .audience-button.active {
-    color: #fff;
-    border-color: #FF8400;
-    background-color: #FF8400;
+    color: #D3D3D3;
+    border-color: #800000;
+    background-color: #800000;
     cursor: default
 }
 
@@ -680,29 +680,29 @@ img[align=right] {
 }
 
 .audience-button.inactive {
-    color: #FF8400;
-    border-color: #FF8400;
-    background-color: #fff;
+    color: #800000;
+    border-color: #800000;
+    background-color: #D3D3D3;
     cursor: pointer
 }
 
 .audience-button.inactive:hover {
     text-decoration: none;
-    color: #FF8400;
-    border-color: #FF8400
+    color: #800000;
+    border-color: #800000
 }
 
 .audience-button.inactive {
-    color: #FF8400;
-    border-color: #FF8400;
-    background-color: #fff
+    color: #800000;
+    border-color: #800000;
+    background-color: #D3D3D3
 }
 
 .audience-button .tooltiptext {
     visibility: hidden;
     width: 200px;
     background-color: #000;
-    color: #fff;
+    color: #D3D3D3;
     text-align: center;
     padding: 7px 20px;
     border-radius: 6px
@@ -751,7 +751,7 @@ article .subtitle {
 }
 
 article .subtitle>a {
-    color: #FF8400
+    color: #800000
 }
 
 article header {
@@ -781,11 +781,11 @@ header h1 {
 }
 
 .feature-image .post-link {
-    color: #fff
+    color: #D3D3D3
 }
 
 .feature-image header {
-    color: #fff;
+    color: #D3D3D3;
     background-size: cover;
     margin-bottom: 0;
     padding: 8% 20%
@@ -798,11 +798,11 @@ header h1 {
 .call-out {
     display: inline-block;
     width: 100%;
-    background-color: #FF8400;
+    background-color: #800000;
     background-size: cover;
     font-size: 1.2em;
     text-align: center;
-    color: #fff
+    color: #D3D3D3
 }
 
 .call-out h1 {
@@ -883,7 +883,7 @@ header h1 {
 }
 
 .octocat:hover {
-    color: #FF8400;
+    color: #800000;
     text-decoration: none
 }
 
@@ -1003,7 +1003,7 @@ header h1 {
 }
 
 .falist a:hover {
-    color: #FF8400;
+    color: #800000;
     text-decoration: none
 }
 
@@ -1029,7 +1029,7 @@ header h1 {
 }
 
 .cv tr:hover {
-    border: 1px solid #FF8400
+    border: 1px solid #800000
 }
 
 .cv tr:last-child>td {
@@ -1039,8 +1039,8 @@ header h1 {
 .cv td {
     padding-top: .5em 8px .5em 8px;
     text-align: left;
-    border: 1px dotted gray;
-    border-color: #fff #fff gray #fff
+    border: 1px dotted grey;
+    border-color: #F1F1F1 #F1F1F1 grey #F1F1F1
 }
 
 .cv td:first-child {
@@ -1124,7 +1124,7 @@ div .picturebox {
 }
 
 .site-header {
-    background: #fff;
+    background: #F1F1F1;
     border-bottom: 1px solid rgba(0,0,0,.1);
     display: inline-block;
     float: left;
@@ -1136,7 +1136,7 @@ div .picturebox {
 }
 
 .site-header a:hover {
-    color: #FF8400
+    color: #800000
 }
 
 .site-header .avatar {
@@ -1177,7 +1177,7 @@ div .picturebox {
     display: inline-block;
     text-align: center;
     width: 100%;
-    color: #858585;
+    color: #D3D3D3;
     font-size: .9em
 }
 
