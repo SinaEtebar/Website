@@ -16,5 +16,8 @@ feature-img: "assets/img/header.png"
 
 
 <p>For plotting the solar neutrino flux at first step we need the data, I get my the data from <a href="https://www.sns.ias.edu/~jnb/SNdata/sndata.html"> Software and data for solar neutrino research</a> then I use matplotlib to plot them here is the code:</p>
+
+<script src="https://gist.github.com/SinaEtebar/9d2d740e9e8fed22ede15f6a7ba13078.js"></script>
+
 <p>And here is the final result with a little modification:</p>
 <img alt="Solar Neutrino Flux" src="/assets/img/SolarFlux.jpg">
