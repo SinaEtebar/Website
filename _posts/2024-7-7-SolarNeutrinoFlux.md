@@ -16,3 +16,12 @@ feature-img: "assets/img/header.png"
 <script src="https://gist.github.com/SinaEtebar/9d2d740e9e8fed22ede15f6a7ba13078.js"></script>
 <p>And here is the final result with a little bit modification:</p>
 <img alt="Solar Neutrino Flux" src="/assets/img/SolarFlux.jpg">
+<footer>
+  <div class="tags">
+    
+    <a class="tag" href="/tags#python">#python</a>
+    
+    <a class="tag" href="/tags#LaTeX">#physics</a>
+    
+  </div>
+</footer>
