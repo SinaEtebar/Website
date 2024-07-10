@@ -21,7 +21,7 @@ feature-img: "assets/img/header.png"
     
     <a class="tag" href="/tags#python">#python</a>
     
-    <a class="tag" href="/tags#LaTeX">#physics</a>
+    <a class="tag" href="/tags#LaTeX">#physic</a>
     
   </div>
 </footer>
