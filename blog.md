@@ -3,7 +3,7 @@ layout: page
 title: Blog
 subtitle: Blogging about Maths & Physics and history
 permalink: /blog/
-#feature-img: "assets/img/sample_feature_img_2.png"
+#feature-img: "assets/img/header.png"
 ---
  <div class="posts">
 
