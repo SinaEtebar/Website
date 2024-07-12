@@ -781,7 +781,7 @@ header h1 {
 }
 
 .feature-image .post-link {
-    color: #D3D3D3
+    color: #333333
 }
 
 .feature-image header {
@@ -792,7 +792,7 @@ header h1 {
 }
 
 .feature-image header .meta,.feature-image header #post-nav p,#post-nav .feature-image header p {
-    color: rgba(255,255,255,.7)
+    color: #333333
 }
 
 .call-out {
