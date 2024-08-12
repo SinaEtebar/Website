@@ -62,8 +62,8 @@ permalink: /photography/
       </a>
     </div>
      <div class="picturebox landscape">
-      <a href="/assets/img/photography/20200508.jpg" data-lightbox="mylightbox" data-title="Spring. Iran 2018. Copyright Sina Etebar 2018.">
-        <img alt="Picture copyright Sina Etebar." src="/assets/img/photography/20200508.jpg" />
+      <a href="/assets/img/photography/20240719.jpg" data-lightbox="mylightbox" data-title="Spring. Iran 2018. Copyright Sina Etebar 2018.">
+        <img alt="Picture copyright Sina Etebar." src="/assets/img/photography/20240719.jpg" />
       </a>
     </div>
     </div>
