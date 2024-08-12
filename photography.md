@@ -6,36 +6,39 @@ permalink: /photography/
  <section class="post-content"><div class="photography">
   <div class="folder">
     <div class="picturebox landscape">
-      <a href="/assets/img/photography/20171207.jpg" data-lightbox="mylightbox" data-title="heavy winter. Iran 2017. Copyright Sina Etebar 2017. ">
-        <img alt="Picture copyright Sina Etebar." src="/assets/img/photography/20171207.jpg" />
+      <a href="/assets/img/photography/20190802.jpg" data-lightbox="mylightbox" data-title="Rudbar, Gilan. Iran 2019. Copyright Sina Etebar 2017. ">
+        <img alt="Picture copyright Sina Etebar." src="/assets/img/photography/20190802.jpg" />
       </a>
     </div>
     <div class="picturebox landscape">
-      <a href="/assets/img/photography/20180110.jpg" data-lightbox="mylightbox" data-title="Laleh park. Iran 2017. Copyright Sina Etebar 2018.">
-        <img alt="Picture copyright Sina Etebar." src="/assets/img/photography/20180110.jpg" />
+      <a href="/assets/img/photography/20191002.jpg" data-lightbox="mylightbox" data-title="Isfahan. Iran 2018. Copyright Sina Etebar 2018.">
+        <img alt="Picture copyright Sina Etebar." src="/assets/img/photography/20191002.jpg" />
       </a>
     </div>
     <div class="picturebox landscape">
-      <a href="/assets/img/photography/20180111.jpg" data-lightbox="mylightbox" data-title="Home. Iran 2017. Copyright Sina Etebar 2018.">
-        <img alt="Picture copyright Sina Etebar." src="/assets/img/photography/20180111.jpg" />
+      <a href="/assets/img/photography/20180718.jpg" data-lightbox="mylightbox" data-title="Home. Iran 2018. Copyright Sina Etebar 2018.">
+        <img alt="Picture copyright Sina Etebar." src="/assets/img/photography/20180718.jpg" />
       </a>
     </div>
     <div class="picturebox landscape">
-      <a href="/assets/img/photography/20180114.jpg" data-lightbox="mylightbox" data-title="Towes. Iran 2018. Copyright Sina Etebar 2018.">
-        <img alt="Picture copyright Sina Etebar." src="/assets/img/photography/20180114.jpg" />
+      <a href="/assets/img/photography/20180519.jpg" data-lightbox="mylightbox" data-title="IUT Centeral Library. Iran 2018. Copyright Sina Etebar 2018.">
+        <img alt="Picture copyright Sina Etebar." src="/assets/img/photography/20180519.jpg" />
       </a>
     </div>
-   <div class="picturebox landscape">
-      <a href="/assets/img/photography/20180204.jpg" data-lightbox="mylightbox" data-title="Experiment IUT. Iran 2018. Copyright Sina Etebar 2018.">
-        <img alt="Picture copyright Sina Etebar." src="/assets/img/photography/20180204.jpg" />
+    <div class="picturebox landscape">
+      <a href="/assets/img/photography/20180810.jpg" data-lightbox="mylightbox" data-title="Ramsar. Iran 2018. Copyright Sina Etebar 2018.">
+        <img alt="Picture copyright Sina Etebar." src="/assets/img/photography/20180810.jpg" />
       </a>
     </div> 
-    <div class="picturebox landscape">
+    <div class="picturebox portrait">
       <a href="/assets/img/photography/20180325.jpg" data-lightbox="mylightbox" data-title="Spring. Iran 2018. Copyright Sina Etebar 2018.">
-        <img alt="Picture copyright Sina Etebar." src="/assets/img/photography/20180325.jpg" />
-      </a>
+        <img class="left" alt="Picture copyright Sina Etebar." src="/assets/img/photography/20180325.jpg" />
+        </a>
+      <a href="/assets/img/photography/20180704.jpg" data-lightbox="mylightbox" data-title="Tabriz. Iran 2018. Copyright Sina Etebar 2018.">
+        <img class="right" alt="Picture copyright Sina Etebar." src="/assets/img/photography/20180704.jpg" />
+        </a>
     </div>
-  <div class="picturebox landscape">
+    <div class="picturebox landscape">
       <a href="/assets/img/photography/20180510.jpg" data-lightbox="mylightbox" data-title="Tehran. Iran 2018. Copyright Sina Etebar 2018.">
         <img alt="Picture copyright Sina Etebar." src="/assets/img/photography/20180510.jpg" />
       </a>
@@ -46,11 +49,11 @@ permalink: /photography/
       </a>
     </div>
     <div class="picturebox landscape">
-      <a href="/assets/img/photography/20180704.jpg" data-lightbox="mylightbox" data-title="Tabriz. Iran 2018. Copyright Sina Etebar 2018.">
-        <img alt="Picture copyright Sina Etebar." src="/assets/img/photography/20180704.jpg" />
+      <a href="/assets/img/photography/20190604.jpg" data-lightbox="mylightbox" data-title="Isfahan. Iran 2019. Copyright Sina Etebar 2018.">
+        <img alt="Picture copyright Sina Etebar." src="/assets/img/photography/20190604.jpg" />
       </a>
     </div>
-  <div class="picturebox landscape">
+    <div class="picturebox landscape">
       <a href="/assets/img/photography/20180308.jpg" data-lightbox="mylightbox" data-title="IUT. Iran 2018. Copyright Sina Etebar 2018.">
         <img alt="Picture copyright Sina Etebar." src="/assets/img/photography/20180308.jpg" />
       </a>
@@ -59,14 +62,14 @@ permalink: /photography/
       <a href="/assets/img/photography/20180317.jpg" data-lightbox="mylightbox" data-title="Spring. Iran 2018. Copyright Sina Etebar 2018.">
         <img alt="Picture copyright Sina Etebar." src="/assets/img/photography/20180317.jpg" />
       </a>
-    </div>
+     </div>
      <div class="picturebox landscape">
-      <a href="/assets/img/photography/20240719.jpg" data-lightbox="mylightbox" data-title="Spring. Iran 2018. Copyright Sina Etebar 2018.">
+      <a href="/assets/img/photography/20240719.jpg" data-lightbox="mylightbox" data-title="Spring. Iran 2019. Copyright Sina Etebar 2018.">
         <img alt="Picture copyright Sina Etebar." src="/assets/img/photography/20240719.jpg" />
       </a>
     </div>
     </div>
-  <div class="caption">Copyright Sina Etebar 2017-2018</div>
+  <div class="caption">Copyright Sina Etebar 2018-2019</div>
 </div>
 <script src="/assets/js/lightbox-plus-jquery.min.js"></script>
 <script>
