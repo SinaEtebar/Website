@@ -2,7 +2,6 @@
 layout: page
 title: Photography
 permalink: /photography/
-#feature-img: "assets/img/sample_feature_img_2.png"
 ---
  <section class="post-content"><div class="photography">
   <div class="folder">
