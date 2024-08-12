@@ -6,7 +6,6 @@ permalink: /blog/
 #feature-img: "assets/img/header.png"
 ---
  <div class="posts">
-
   <div class="post-teaser">
       <header>
         <h1>
