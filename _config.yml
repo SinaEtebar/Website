@@ -16,7 +16,7 @@ theme_settings:
    <p><a href="/disclaimer/">Copyright & Disclaimer</a></p>
 
   # Icons
-  rss: false
+  rss:
   email_address: sina.etebar@posteo.net # Full email address, e.g. "sam@example.com"
   behance:
   bitbucket: sinaetebar 
@@ -24,7 +24,7 @@ theme_settings:
   facebook: sina etebar
   flickr:
   gitlab:
-  github: "SinaEtebar"
+  github: SinaEtebar
   gitter:
   google_plus:
   instagram:
@@ -38,7 +38,8 @@ theme_settings:
   twitter: sina_etebar
   wordpress:
   youtube:
-  hackerone: https://hackerone.com/lufan
+  hackerone: https://hackerone.com/sina
+  feed: sinaetebar.net/feed.xml
   
 
   # Scripts
