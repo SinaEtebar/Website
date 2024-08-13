@@ -38,9 +38,7 @@ theme_settings:
   twitter: sina_etebar
   wordpress:
   youtube:
-  hackerone: https://hackerone.com/sina
-  feed: sinaetebar.net/feed.xml
-  
+  hackerone: https://hackerone.com/lufan  
 
   # Scripts
   google_analytics: # Tracking ID, e.g. "UA-000000-01"
