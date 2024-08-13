@@ -16,7 +16,7 @@ theme_settings:
    <p><a href="/disclaimer/">Copyright & Disclaimer</a></p>
 
   # Icons
-  rss:
+  rss: sinaetebar.net/feed.xml
   email_address: sina.etebar@posteo.net # Full email address, e.g. "sam@example.com"
   behance:
   bitbucket: sinaetebar 
