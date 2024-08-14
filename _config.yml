@@ -6,8 +6,8 @@ url: ""
 theme_settings:
   # Meta
   title: Sina Etebar
-  avatar: assets/img/sina.png
-  favicon: assets/favicon-32x32.png
+  avatar: assets/img/index/sina.png
+  favicon: assets/fav/favicon-32x32.png
   gravatar: #
   description: "Sina Etebar website" # used by search engines
   
