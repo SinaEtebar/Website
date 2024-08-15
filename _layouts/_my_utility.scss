@@ -1,0 +1,81 @@
+/* AUDIENCE SETTINGS */
+/* ================= */
+
+.audience-button-container{
+    margin-bottom: 0.5em;
+}
+
+.audience-button{
+    position: relative;
+    border: 1px solid;
+    padding: 5px 0px; /*32*/
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 0px;/*2 px*/
+    width: 150px;
+}
+
+
+.audience-button.active {
+    color: white;
+    border-color: $link-color;
+    background-color: $link-color;
+    cursor: default;
+}
+
+.audience-button.active:hover {
+    /* clear highlight set before*/
+    text-decoration: none;
+}
+
+.audience-button.inactive{
+    color: $link-color;
+    border-color: $link-color;
+    background-color: white;
+    cursor: pointer;
+}
+
+.audience-button.inactive:hover{
+    /* clear highlight set before*/
+    text-decoration: none;
+    color: darken($link-color, 15%);
+    border-color: darken($link-color, 15%);
+}
+
+.audience-button.inactive{
+    color: $link-color;
+    border-color: $link-color;
+    background-color: white;
+}
+
+.audience-button .tooltiptext{
+    visibility: hidden;
+    width: 200px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 7px 20px;
+    border-radius: 6px;
+}
+
+.audience-button.beginner .tooltiptext{
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    right: 105%; 
+}
+
+.audience-button.expert .tooltiptext{
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    left: 105%; 
+}
+
+.audience-button.inactive:hover .tooltiptext {
+    visibility: visible;
+}
