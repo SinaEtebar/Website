@@ -1,0 +1,76 @@
+.photography{
+	margin: 0 auto;/*center in parent*/
+	max-width: 40em;
+}
+
+.photography > .intro{
+	font-size: 1.3em;
+	margin-bottom: 3em;
+}
+
+.photography > h2{
+	font-size: 1.7em;
+	font-weight: normal;
+	margin-top: 1em;
+	margin-bottom: 0.2em;
+}
+
+.photography > .folder{
+	display: block;
+	max-width: 462px; /*3x150 + 2x2 + 2x4 =*/ 
+	margin: 0 auto;	
+	text-align: center;
+	font-size: 0;/*remove spaces between photos*/
+}
+
+.photography > .folder img{
+	margin: 0px;
+	padding: 0px;
+	/*border: 1px solid green;*/
+}
+
+/*Landscapes are 100x150, portrait 100x67, two portraits 
+will have 4px of space between, so we're at 67x2+4 = 138, so we
+need 12 px additional margin, divided by 4 (note that it's applied 
+left and right for 2 pictures)*/
+
+div .picturebox {
+	text-align: center;
+	display: inline-block;
+	/*width: 150px;*/
+	margin: 2px;
+	/*border: 1px solid green;*/
+}
+
+.picturebox {
+	width: 150px;
+	height: 100px;
+	overflow: hidden;
+}
+
+
+.landscape img{
+	height: 100px;
+}
+
+.portrait img{
+	width: 73px; /*to balance the whitespace between two portraits*/
+}
+
+.picturebox .left{
+	float: left;
+}
+
+
+.picturebox .right{
+	float: right;
+}
+
+.caption{
+	color: gray;
+	margin-top: 0.5em;
+	text-align: center;
+	font-size: 1em;
+	display: block;
+	width: 100%;
+}
