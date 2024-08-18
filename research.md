@@ -1,12 +1,15 @@
 ---
-layout: page
+layout: default
 title: Research Projects
 permalink: /research/
 ---
-  <div class="content">
-      <script src="/assets/js/toggle_audience.js"></script>
+<div class="content">
+    <script src="/assets/js/toggle_audience.js"></script>
 <article >
- <section class="post-content project"><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+   <header style="background-image: url('/')">
+     <h1 class="title">Research Projects</h1>
+     </header>
+<section class="post-content project"><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 
