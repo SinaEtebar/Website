@@ -1,10 +1,16 @@
 ---
-layout: page
+layout: default
 title: Blog
 subtitle: Blogging about Maths & Physics and history
 permalink: /blog/
-#feature-img: "assets/img/header.png"
+feature-img: "assets/img/SNF/header.png"
 ---
+   <div class="content">
+      <div class="blog">
+  <div class="call-out">
+    <h1>Blog</h1>
+    <h2>Blogging about hacking & Maths, Physics, history...</h2>
+  </div>
  <div class="posts">
   <div class="post-teaser">
       <header>
