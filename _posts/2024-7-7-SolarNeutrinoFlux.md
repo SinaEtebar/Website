@@ -5,6 +5,7 @@ feature-img: "assets/img/SNF/header.png"
 ---
 
 <p>Solar neutrinos are neutrinos that are produced in the core of the sun with nuclear fusion reactions, each one of them has its own spectrum of neutrino energies. Here I will write about the important ones.</p>
+
 <ul>
     <li>pp chain:   $\;\;\;\;p^+ + p^+ \longrightarrow {}^{2}\text{H} + e^+ + \nu_e$</li>
     <li>pep chain:  $\;\;p^+ + e^- + p^+ \longrightarrow {}^{2}\text{H} + \nu_e$</li>
