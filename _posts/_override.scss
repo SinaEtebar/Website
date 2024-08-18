@@ -1,7 +1,0 @@
-/* Need to unset formatting of classes that are used both by pygment and by MathJax */
-.MathJax .mi {
-    color: inherit;
-}
-.MathJax .mo {
-    color: inherit;
-}
