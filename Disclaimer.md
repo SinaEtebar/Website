@@ -1,10 +1,15 @@
 ---
-layout: page
+layout: default
 title: Copyright & Disclaimer
 permalink: /disclaimer/
 ---
 
-
+  <div class="content">
+      <article >
+  <header style="background-image: url('/')">
+    <h1 class="title">Copyright &amp; Disclaimer</h1>
+    
+   </header> 
   <section class="post-content"><div class="Copyright & Disclaimer">
   <h2>Software</h2>
 
@@ -38,3 +43,4 @@ permalink: /disclaimer/
   <p>Source: <a href="http://www.mustervorlage.net/disclaimer-muster#Englisch">Disclaimer on Mustervorlage.net</a></p>
 </div>
 </section>
+</article>
