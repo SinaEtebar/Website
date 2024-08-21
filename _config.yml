@@ -13,7 +13,7 @@ theme_settings:
   
   # Header and footer text
   footer_text: >
-   <p><a href="/disclaimer/">Copyright & Disclaimer</a></p>
+   <p class="text"><a href="/disclaimer/">Copyright & Disclaimer</a></p>
 
   # Icons
   rss: sinaetebar.net/feed.xml
