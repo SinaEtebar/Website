@@ -50,6 +50,25 @@ feature-img: "assets/img/SNF/header.png"
       </div>
    </div>
 
+   <div class="post-teaser">
+      <header>
+        <h1>
+          <a class="post-link" href="/2023/11/18/QToE.html">
+            The Quantum Theory of the Electron 
+          </a>
+        </h1>
+        <p class="meta">
+          November 18, 2023
+        </p>
+      </header>
+      <div class="excerpt">
+      Quantum Field Theory (QFT) is a theoretical framework for physics that combines the ideas of classical field theory and quantum mechanics. It is a cornerstone of contemporary theoretical physics and is essential to our comprehension of the fundamental forces and particles in the cosmos.<br>
+        <a class="button" href="/2023/11/18/QToE.html">
+          Continue reading
+        </a>
+      </div>
+   </div>
+
   <div class="post-teaser">
       <header>
         <h1>
