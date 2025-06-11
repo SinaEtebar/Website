@@ -22,7 +22,7 @@ permalink: /cv/
     </td>
    </tr>-->
    <tr>
-    <td>Sep 2020– Jul 2025</td>
+    <td>Sep 2021– Jul 2025</td>
     <td><img alt="Isfahan University of Technology" src="/assets/img/cv/IUT.png"  width="75" height="90"/>
     </td>
     <td>
