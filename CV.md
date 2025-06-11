@@ -13,16 +13,16 @@ permalink: /cv/
   </a>
 
 <table class="cv-table">
-   <!--<tr>
-    <td>Sep 2024 – present</td>
-    <td><img alt="Sapienza University" src="/assets/img/cv/sapienza.png"  width="200" height="300"/>
+    <!--<tr>
+    <td>Sep 2025 – present</td>
+    <td><img alt="Sapienza University" src="/assets/img/cv/Uniroma1.svg"  width="210" height="310"/>
     </td>
     <td>
       Master studies in Fundamental Interactions,<a href="https://www.uniroma1.it/en"> Sapienza University</a>.
     </td>
    </tr>-->
    <tr>
-    <td>Sep 2020 – Sep 2023</td>
+    <td>Sep 2020– Jul 2025</td>
     <td><img alt="Isfahan University of Technology" src="/assets/img/cv/IUT.png"  width="75" height="90"/>
     </td>
     <td>
