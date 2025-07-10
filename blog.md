@@ -15,6 +15,24 @@ feature-img: "assets/img/SNF/header.png"
   <div class="post-teaser">
       <header>
         <h1>
+          <a class="post-link" href="/2024/10/14/MyNotesQFT.html">
+            My lecture notes on Quantum Field Theory
+          </a>
+        </h1>
+        <p class="meta">
+          October 14, 2024
+        </p>
+      </header>
+      <div class="excerpt">
+     Here you’ll find my personal study notes, available as downloadable PDF files. I’ve uploaded them both for my own convenience and in case they’re helpful to others as well.<br>
+        <a class="button" href="/2024/10/14/MyNotesQFT.html">
+          Continue reading
+        </a>
+      </div>
+   </div>
+  <div class="post-teaser">
+      <header>
+        <h1>
           <a class="post-link" href="/2024/07/07/SolarNeutrinoFlux.html">
             Plot Solar Neutrino Flux with Python
           </a>
