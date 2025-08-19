@@ -5,7 +5,7 @@ permalink: /cv/
 #feature-img: "assets/img/sample_feature_img_2.png"
 ---
 <div class="cv">
-  <a class="octocat" href="/assets/pdf/sinacv.pdf">
+  <a class="octocat" href="/assets/pdf/cv.pdf">
       <div>
       <div class="fa fa-5x fa-fw fa-file-pdf-o" style="margin-bottom: 0.3ex"></div>
       <div>Read the complete version as PDF</div>
