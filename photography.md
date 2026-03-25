@@ -69,7 +69,7 @@ permalink: /photography/
       </a>
     </div>
     </div>
-  <div class="caption">Copyright Sina Etebar 2018-2019</div>
+  <div class="caption">Iran 2017-2019</div>
 </div>
 <script src="/assets/js/lightbox-plus-jquery.min.js"></script>
 <script>
