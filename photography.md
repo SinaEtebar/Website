@@ -70,6 +70,38 @@ permalink: /photography/
     </div>
     </div>
   <div class="caption">Iran 2017-2019</div>
+<div class="folder">
+    <div class="picturebox landscape">
+      <a href="/assets/img/photography/20260322.jpg" data-lightbox="mylightbox" data-title="Spanish Steps, Rome. Italy 2026. Copyright Sina Etebar 2026. ">
+        <img alt="Picture copyright Sina Etebar." src="/assets/img/photography/20260322.jpg" />
+      </a>
+    </div>
+    <div class="picturebox portrait">
+      <a href="/assets/img/photography/20251102.jpg" data-lightbox="mylightbox" data-title="Spanish Steps, Rome. Italy 2026. Copyright Sina Etebar 2026.">
+        <img class="left" alt="Picture copyright Sina Etebar." src="/assets/img/photography/20251102.jpg" />
+        </a>
+      <a href="/assets/img/photography/20251118.jpg" data-lightbox="mylightbox" data-title="Spanish Steps, Rome. Italy 2026. Copyright Sina Etebar 2026.">
+        <img class="right" alt="Picture copyright Sina Etebar." src="/assets/img/photography/20251118.jpg" />
+        </a>
+    </div>
+    <div class="picturebox portrait">
+      <a href="/assets/img/photography/20251005.jpg" data-lightbox="mylightbox" data-title="Colosseum, Rome. Italy 2026. Copyright Sina Etebar 2026.">
+        <img class="left" alt="Picture copyright Sina Etebar." src="/assets/img/photography/20251005.jpg" />
+        </a>
+      <a href="/assets/img/photography/202510261.jpg" data-lightbox="mylightbox" data-title="Colosseum, Rome. Italy 2026. Copyright Sina Etebar 2026.">
+        <img class="right" alt="Picture copyright Sina Etebar." src="/assets/img/photography/202510261.jpg" />
+        </a>
+      </div>
+      <div class="picturebox portrait">
+      <a href="/assets/img/photography/20251026.jpg" data-lightbox="mylightbox" data-title="Colosseum, Rome. Italy 2026. Copyright Sina Etebar 2026.">
+        <img class="left" alt="Picture copyright Sina Etebar." src="/assets/img/photography/20251026.jpg" />
+        </a>
+      <a href="/assets/img/photography/20251227.jpg" data-lightbox="mylightbox" data-title="Vatican, Rome. Italy 2026. Copyright Sina Etebar 2026.">
+        <img class="right" alt="Picture copyright Sina Etebar." src="/assets/img/photography/20251227.jpg" />
+        </a>
+    </div>
+    </div>
+  <div class="caption">Italy 2025-2026</div>
 </div>
 <script src="/assets/js/lightbox-plus-jquery.min.js"></script>
 <script>
