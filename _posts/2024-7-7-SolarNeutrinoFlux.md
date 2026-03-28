@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Plot Solar Neutrino Flux with Python
-feature-img: "assets/img/SNF/header.png"
+feature-img: "assets/img/SNF/head.png"
 ---
 
 <p>Solar neutrinos are neutrinos that are produced in the core of the sun with nuclear fusion reactions, each one of them has its own spectrum of neutrino energies. Here I will write about the important ones.</p>
