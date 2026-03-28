@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  My Notes on QFT
-feature-img: "assets/img/QFT/feynmandiagram.jpg"
+feature-img: "assets/img/QFT/background.png"
 ---
 Here you’ll find my personal study notes, available as downloadable PDF files. I’ve uploaded them both for my own convenience and in case they’re helpful to others as well.
 
