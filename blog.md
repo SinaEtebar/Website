@@ -15,6 +15,24 @@ feature-img: "assets/img/SNF/header.png"
   <div class="post-teaser">
       <header>
         <h1>
+          <a class="post-link" href="/2026/03/28/PP.html">
+            My notes on Particle Physics
+          </a>
+        </h1>
+        <p class="meta">
+          March 28, 2026
+        </p>
+      </header>
+      <div class="excerpt">
+     Here you’ll find my personal study notes, available as downloadable PDF files. I’ve uploaded them both for my own convenience and in case they’re helpful to others as well.<br>
+        <a class="button" href="/2026/03/28/PP.html">
+          Continue reading
+        </a>
+      </div>
+   </div>
+  <div class="post-teaser">
+      <header>
+        <h1>
           <a class="post-link" href="/2024/10/14/MyNotesQFT.html">
             My lecture notes on Quantum Field Theory
           </a>
