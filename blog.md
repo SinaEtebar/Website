@@ -24,7 +24,7 @@ feature-img: "assets/img/SNF/header.png"
         </p>
       </header>
       <div class="excerpt">
-     Here you’ll find my personal study notes, available as downloadable PDF files. I’ve uploaded them both for my own convenience and in case they’re helpful to others as well.<br>
+     A digital repository of my lecture notes and derivations from the Particle Physics course (MSc) at Sapienza University of Rome, following the curriculum of Prof. Shahram Rahatlou.<br>
         <a class="button" href="/2026/03/28/PP.html">
           Continue reading
         </a>
