@@ -100,6 +100,11 @@ permalink: /photography/
         <img class="right" alt="Picture copyright Sina Etebar." src="/assets/img/photography/20251227.jpg" />
         </a>
     </div>
+    <div class="picturebox landscape">
+      <a href="/assets/img/photography/20260414.jpg" data-lightbox="mylightbox" data-title="Sapienza University, Rome. Italy 2026. Copyright Sina Etebar 2026. ">
+        <img alt="Picture copyright Sina Etebar." src="/assets/img/photography/20260414.jpg" />
+      </a>
+    </div>
     </div>
   <div class="caption">Italy 2025-2026</div>
 </div>
