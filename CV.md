@@ -87,11 +87,11 @@ permalink: /cv/
 <h2>Languages</h2>
 <table>
   <tr>
-    <td>persian/Farsi</td>
+    <td>Turkish</td>
     <td>Native</td>
   </tr>
   <tr>
-    <td>Turkish</td>
+    <td>persian/Farsi</td>
     <td>Native</td>
   </tr>
   <tr>
@@ -108,10 +108,17 @@ permalink: /cv/
       <a href="https://en.wikipedia.org/wiki/Common_European_Framework_of_Reference_for_Languages">B1</a> )
     </td>
   </tr>
+  <tr>
+    <td>Japanese</td>
+    <td>
+      Basic (
+      <a href="https://en.wikipedia.org/wiki/Common_European_Framework_of_Reference_for_Languages">A2</a> )
+    </td>
+  </tr>
 </table>
    <h2>Personal Details</h2>
   <table cellpadding="0" cellspacing="0" border="0">
-    <tr>
+   <tr>
       <td>Nationality</td>
       <td>Iranian</td>
     </tr>
