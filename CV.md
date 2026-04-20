@@ -84,7 +84,7 @@ permalink: /cv/
   </tr>
   <tr>
     <td>persian/Farsi</td>
-    <td>Native</td>
+    <td>Near native</td>
   </tr>
   <tr>
     <td>English</td>
