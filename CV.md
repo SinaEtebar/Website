@@ -110,10 +110,10 @@ permalink: /cv/
 </table>
    <h2>Personal Details</h2>
   <table cellpadding="0" cellspacing="0" border="0">
-   <tr>
+   <!--<tr>
       <td>Nationality</td>
       <td>Iranian</td>
-    </tr>
+    </tr>-->
     <tr>
       <td>Date of birth</td>
       <td>14 March 1999</td>
