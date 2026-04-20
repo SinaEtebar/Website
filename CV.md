@@ -22,14 +22,6 @@ permalink: /cv/
     </td>
    </tr>
    <tr>
-    <td>Sep 2021– Jul 2024</td>
-    <td><img alt="Isfahan University of Technology" src="/assets/img/cv/IUT.png"  width="75" height="90"/>
-    </td>
-    <td>
-      Teacher Assistant for Analytical Mechanics1, Analytical Mechanics2, Electromagnetism1, Electrodynamics and Modern Physics 
-    </td>
-   </tr>
-   <tr>
     <td>Jan 2021</td>
     <td><img alt="HEP Software Foundation" src="/assets/img/cv/hsf.png"  width="90" height="90"/>
     </td>
