@@ -14,7 +14,7 @@ permalink: /cv/
 
 <table class="cv-table">
     <tr>
-    <td>Sep 2024 – present</td>
+    <td>Sep 2025 – present</td>
     <td><img alt="Sapienza University" src="/assets/img/cv/Uniroma1.svg"  width="210" height="310"/>
     </td>
     <td>
