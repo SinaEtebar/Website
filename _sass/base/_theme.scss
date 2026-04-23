@@ -1,0 +1,47 @@
+// =============================================
+// Dark / Light Mode CSS Variables
+// =============================================
+
+:root {
+  --bg-color: #F1F1F1;
+  --text-color: #383838;
+  --link-color: #800000;
+  --header-bg: #F1F1F1;
+  --header-link: #383838;
+  --border-color: rgba(0, 0, 0, 0.1);
+  --footer-text: #767676;
+  --selection-bg: #D4D4D4;
+  --header-desc-bg: #800000;
+  --header-desc-text: #FFF;
+  --tags-color: #b0b0b0;
+  --code-bg: #f4f4f4;
+  --table-border: rgba(0, 0, 0, 0.1);
+  --toggle-track: #ccc;
+  --toggle-thumb: #fff;
+  --toggle-icon-color: #555;
+}
+
+[data-theme="dark"] {
+  --bg-color: #1a1b1e;
+  --text-color: #d4d4d4;
+  --link-color: #c0504d;
+  --header-bg: #111214;
+  --header-link: #d4d4d4;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --footer-text: #888888;
+  --selection-bg: #444444;
+  --header-desc-bg: #800000;
+  --header-desc-text: #FFF;
+  --tags-color: #777777;
+  --code-bg: #2a2b2e;
+  --table-border: rgba(255, 255, 255, 0.1);
+  --toggle-track: #c0504d;
+  --toggle-thumb: #fff;
+  --toggle-icon-color: #d4d4d4;
+}
+
+// Smooth transition for all elements on theme switch
+body,
+body *:not(script):not(style) {
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
