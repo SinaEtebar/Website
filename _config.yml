@@ -21,7 +21,7 @@ theme_settings:
   behance:
   bitbucket: sinaetebar 
   dribbble:
-  facebook: sina etebar
+  bluesky: https://bsky.app/profile/sinaetebar.bsky.social  # آدرس Bluesky خودت رو اینجا بذار
   flickr:
   gitlab:
   github: SinaEtebar
@@ -38,7 +38,7 @@ theme_settings:
   twitter: sina_etebar
   wordpress:
   youtube:
-  hackerone: https://hackerone.com/lufan  
+  hackerone:
 
   # Scripts
   google_analytics: # Tracking ID, e.g. "UA-000000-01"
