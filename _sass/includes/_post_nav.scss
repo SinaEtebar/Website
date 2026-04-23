@@ -1,6 +1,6 @@
 #post-nav {
   width:100%;
-  border-bottom: 1px solid $border-color;
+  border-bottom: 1px solid var(--border-color);
   float: left;
   text-align: center;
   @extend %padding-small;
