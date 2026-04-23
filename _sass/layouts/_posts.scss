@@ -4,7 +4,7 @@
 
 article,
 .comments {
-  border-bottom: 1px solid $border-color;
+  border-bottom: 1px solid var(--border-color);
   @extend %padding-regular;
   float: left;
   width: 100%;
@@ -18,7 +18,7 @@ article {
   }
 
   .subtitle > a{
-    color: $link_color;
+    color: var(--link-color);
   }
 
   header {
@@ -38,7 +38,7 @@ header {
   }
 }
 .meta {
-  color: rgba($text-color, .5);
+  color: rgba(var(--text-color), .5);
   font-size: 0.9em;
   letter-spacing: 0.1em;
   margin: 0;
