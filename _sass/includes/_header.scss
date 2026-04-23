@@ -1,61 +1,138 @@
 .site-header {
   @extend %padding-small;
-  background: $brand-color;
-  border-bottom: 1px solid $border-color;
+  background: var(--header-bg);
+  border-bottom: 1px solid var(--border-color);
   display: inline-block;
   float: left;
   width: 100%;
 
   a {
-    color: $header-link-color;
+    color: var(--header-link);
   }
-  
-  a:hover{
-    color: $link-color;
+  a:hover {
+    color: var(--link-color);
   }
+}
 
+// Top row: avatar + title + toggle
+.header-top {
+  display: flex;
+  align-items: center;
+  gap: 0.75em;
+  margin-bottom: 0.3em;
+}
+
+.branding {
+  flex-shrink: 0;
   .avatar {
     height: 4em;
     width: 4em;
-    float: left;
-    margin-top: -3px;
-    border-radius: 0.2em;
-    margin-right: 1em;
-  }
-
-  .site-title {
     display: block;
-    /*float: left;*/
-    font-weight: bold;
-    font-size: 1em;
-    line-height: 1.5;
+    border-radius: 0.2em;
+  }
+}
+
+// Title + toggle side by side
+.header-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.site-title {
+  font-weight: bold;
+  font-size: 1em;
+  line-height: 1.5;
+  margin: 0;
+  a {
+    color: var(--header-link);
+  }
+}
+
+// Toggle button (sun/moon icons next to name)
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 3px;
+  border-radius: 4px;
+  color: var(--text-color);
+  opacity: 0.65;
+  transition: opacity 0.2s, color 0.2s;
+
+  &:hover {
+    opacity: 1;
+    color: var(--link-color);
   }
 
-  .site-nav {  
-    margin-top: 4px; /*to center with avatar*/
-    
-    ul {
+  .toggle-icon {
+    display: flex;
+    align-items: center;
+    svg {
       display: block;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      line-height: 1.5;
-      /*float: left;*/
-      text-align: left;
     }
-    li {
-      display: inline;
-      /*float: left;*/
-      margin-right: 0.4em;
+  }
+
+  // In light mode: show moon (click to go dark)
+  // In dark mode: show sun (click to go light)
+  .toggle-sun { display: none; }
+  .toggle-moon { display: flex; }
+}
+
+[data-theme="dark"] .theme-toggle {
+  .toggle-sun { display: flex; }
+  .toggle-moon { display: none; }
+}
+
+// Nav row
+.site-nav {
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.1em 0.1em;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    display: flex;
+    align-items: center;
+  }
+  .page-link {
+    padding: 2px 0.4em;
+    font-size: 0.95em;
+  }
+}
+
+// Social icons row
+.social-icons {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  margin-left: 0.3em;
+
+  .social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    color: var(--header-link);
+    opacity: 0.6;
+    transition: opacity 0.2s, color 0.2s, background 0.2s;
+    text-decoration: none;
+
+    &:hover {
+      opacity: 1;
+      color: var(--link-color);
+      background: var(--border-color);
     }
-    /*@media (max-width: 1100px) {
-      ul {
-        display: inline-block;
-        float: left;
-        padding-top: $padding-small;
-        text-align: left;
-        width: 100%;
-      }
-    }*/
+
+    svg {
+      display: block;
+      flex-shrink: 0;
+    }
   }
 }
