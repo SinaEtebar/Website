@@ -23,11 +23,11 @@
   @extend %padding-small;
   display: inline-block;
   width: 100%;
-  background-color:$header-desc-background-color;
+  background-color:var(--header-desc-bg);
   background-size: cover;
   font-size: 1.2em;
   text-align: center;
-  color: $header-desc-text-color;
+  color: var(--header-desc-text);
 }
 
 .call-out h1{
@@ -51,7 +51,7 @@
     margin-bottom: 0;
     display: inline-block;
     background-size: $feature-image-size;
-    border-bottom: 1px solid $border-color;
+    border-bottom: 1px solid var(--border-color);
     p a {
       @extend .body-link;
     }
