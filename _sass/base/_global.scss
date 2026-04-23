@@ -6,24 +6,21 @@
 figure {
   margin: 0;
 }
-// For correct line number width in Github Gists
 .gist table tbody tr td {
   box-sizing: content-box;
 }
 html {
-  background: $background-color;
-  /*min-width: 50em;*/
+  background: var(--bg-color);
 }
 
-// Typography
 ::selection {
-  background: $selection-color;
+  background: var(--selection-bg);
 }
 ::-moz-selection {
-  background: $selection-color;
+  background: var(--selection-bg);
 }
 body {
-  color: $text-color;
+  color: var(--text-color);
   font-family: $font-family-main;
   font-size: $font-size;
   word-wrap: break-word;
@@ -33,24 +30,16 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.3;
   margin: 0.67em 0;
   a {
-    color: $text-color;
+    color: var(--text-color);
   }
 }
-h1 {
-  font-size: 2.0em;
-}
-h2 {
-  font-size: 1.6em;
-}
-h3 {
-  font-size: 1.3em;
-}
-h4 {
-  font-size: 1.15em;
-}
+h1 { font-size: 2.0em; }
+h2 { font-size: 1.6em; }
+h3 { font-size: 1.3em; }
+h4 { font-size: 1.15em; }
+
 blockquote {
-    border-left: 4px solid;
-    border-color: gray;
+    border-left: 4px solid var(--border-color);
     padding: 1em 0em 1em 1em;
 }
 blockquote p:last-child,
@@ -66,52 +55,37 @@ table {
     display: inline-block;
   }
 }
-td,
-th {
+td, th {
   padding: 0.5em 1em;
-  border: 1px solid $border-color;
+  border: 1px solid var(--table-border);
   text-align: left;
 }
-table,
-dl,
-blockquote,
-code,
-kbd,
-pre,
-samp {
+table, dl, blockquote, code, kbd, pre, samp {
   margin: 1em 0;
 }
-dt {
-  font-weight: bold;
-}
-dd {
-    margin-left: 2em;
-}
+dt { font-weight: bold; }
+dd { margin-left: 2em; }
 p, ol, ul, dl, .math-display {
   line-height: 1.5;
   margin-bottom: 1em;
 }
-// KaTeX math display
 .math-display {
   display: inline-block;
   width: 100%;
 }
-// Lists within lists
 li > ul, li > ol {
     margin-bottom: 0;
     margin-left: 1em;
 }
-ol, ul {
-  list-style-position: inside;
-}
+ol, ul { list-style-position: inside; }
 hr {
   border: 0;
-  border-top: 1px solid $border-color;
-  border-bottom: 1px solid #fff;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid transparent;
   margin: 1em 0;
 }
 a {
-  color: $link-color;
+  color: var(--link-color);
   text-decoration: none;
 }
 .nav {
@@ -119,13 +93,53 @@ a {
   margin: 0;
   padding: 0;
 }
-// Responsive media
 iframe, img, embed, object, video {
   max-width: 100%;
 }
-img[align=left] {
-  margin-right: 3%;
-}
-img[align=right] {
-  margin-left: 3%;
+img[align=left] { margin-right: 3%; }
+img[align=right] { margin-left: 3%; }
+
+.site-header {
+  @extend %padding-small;
+  background: var(--header-bg);
+  border-bottom: 1px solid var(--border-color);
+  display: inline-block;
+  float: left;
+  width: 100%;
+
+  a {
+    color: var(--header-link);
+  }
+  a:hover {
+    color: var(--link-color);
+  }
+  .avatar {
+    height: 4em;
+    width: 4em;
+    float: left;
+    margin-top: -3px;
+    border-radius: 0.2em;
+    margin-right: 1em;
+  }
+  .site-title {
+    display: block;
+    font-weight: bold;
+    font-size: 1em;
+    line-height: 1.5;
+  }
+  .site-nav {  
+    margin-top: 4px;
+    ul {
+      display: block;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      line-height: 1.5;
+      text-align: left;
+    }
+    li {
+      display: inline;
+      margin-right: 0.4em;
+    }
+  }
 }
