@@ -1,14 +1,14 @@
 {% if site.theme_settings.rss %}
 <li>
-	<a href="https://{{ site.theme_settings.rss }}" title="{{ site.theme_settings.str_rss_follow }}">
+	<a href="{{ site.theme_settings.rss }}" title="{{ site.theme_settings.str_rss_follow }}">
 		<span class="fa fa-fw fa-rss"></span>
 	</a>
 </li>
 {% endif %}
 
-{% if site.theme_settings.email_address %}
+{% if site.theme_settings.email_mailhide %}
 <li>
-	<a href="mailto:{{ site.theme_settings.email_address }}" title="{{ site.theme_settings.str_email }}">
+	<a href="{{ site.theme_settings.email_mailhide }}" title="{{ site.theme_settings.str_email }}" target="_blank" rel="noopener">
 		<span class="fa fa-fw fa-envelope"></span>
 	</a>
 </li>
