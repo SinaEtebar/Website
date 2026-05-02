@@ -9,7 +9,7 @@ permalink: /research/
    <header style="background-image: url('/')">
      <h1 class="title">Research Projects</h1>
      </header>
-<section class="post-content project"><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<section class="post-content project">
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 
