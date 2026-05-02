@@ -12,7 +12,6 @@ permalink: /research/
 <section class="post-content project">
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-
 <section id="bachelor-Physics">
   <h2 class="project-title">The Role of Sterile Neutrinos to Explain Various Anomalies Observed in
 Neutrino Oscillation Experiments</h2>
