@@ -52,10 +52,51 @@ header {
   header {
     color: #D3D3D3;
     background-size: $feature-image-size;
+    background-position: center center;
     margin-bottom: 0;
     padding: $padding-large/2.5 $padding-large;
+    text-align: center;
+
+    h1.title {
+      font-size: 2.2em;
+      line-height: 1.2;
+      margin: 0 0 0.3em 0;
+      text-shadow: 0px 2px 6px rgba(0,0,0,0.85);
+      color: #ffffff;
+    }
+
     .meta {
-      color: rgba($feature-image-text-color, .7);
+      display: inline-block;
+      background: rgba(0, 0, 0, 0.55);
+      color: #e0e0e0;
+      border-radius: 20px;
+      padding: 4px 14px;
+      font-size: 0.85em;
+      letter-spacing: 0.12em;
+      text-shadow: none;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    @media (max-width: 1000px) {
+      padding: $padding-small $padding-small * 2;
+      h1.title {
+        font-size: 1.9em;
+      }
+    }
+
+    @media (max-width: 576px) {
+      padding: 8% 6%;
+      h1.title {
+        font-size: 1.35em;
+        line-height: 1.25;
+        word-break: break-word;
+        margin-bottom: 0.4em;
+      }
+      .meta {
+        font-size: 0.75em;
+        letter-spacing: 0.08em;
+        padding: 3px 10px;
+      }
     }
   }
   .post-content {
