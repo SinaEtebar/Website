@@ -1,43 +1,54 @@
 // =============================================
 // Dark / Light Mode CSS Variables
+// Sapienza theme: crimson (#832434) + gold (#C9A84C)
 // =============================================
 
 :root {
-  --bg-color: #F1F1F1;
+  // Light mode: crimson is primary accent
+  --bg-color: #fafafa;
   --text-color: #383838;
-  --link-color: #800000;
-  --header-bg: #F1F1F1;
+  --link-color: #832434;           // Sapienza crimson
+  --link-hover-color: #5e1a26;     // crimson darker برای hover
+  --header-bg: #fafafa;
   --header-link: #383838;
   --border-color: rgba(0, 0, 0, 0.1);
   --footer-text: #767676;
-  --selection-bg: #D4D4D4;
-  --header-desc-bg: #800000;
+  --selection-bg: #f5e6e8;         // crimson خیلی روشن
+  --header-desc-bg: #832434;       // Sapienza crimson
   --header-desc-text: #FFF;
   --tags-color: #b0b0b0;
+  --tags-bg: #f5e6e8;              // crimson خیلی روشن
+  --tags-text: #832434;            // crimson
   --code-bg: #f4f4f4;
   --table-border: rgba(0, 0, 0, 0.1);
-  --toggle-track: #ccc;
+  --toggle-track: #e0c8cb;
   --toggle-thumb: #fff;
-  --toggle-icon-color: #555;
+  --toggle-icon-color: #832434;
+  --accent-gold: #C9A84C;          // طلایی رم برای accent ثانویه
 }
 
 [data-theme="dark"] {
-  --bg-color: #1a1b1e;
+  // Dark mode: gold becomes primary accent, crimson moves to borders/hover
+  --bg-color: #111214;
   --text-color: #d4d4d4;
-  --link-color: #c0504d;
-  --header-bg: #111214;
+  --link-color: #C9A84C;           // طلایی رم — روی تاریک خواناست
+  --link-hover-color: #e0bc6a;     // طلایی روشن‌تر برای hover
+  --header-bg: #0d0e10;
   --header-link: #d4d4d4;
   --border-color: rgba(255, 255, 255, 0.1);
   --footer-text: #888888;
-  --selection-bg: #444444;
-  --header-desc-bg: #800000;
+  --selection-bg: #3d2800;         // طلایی تیره
+  --header-desc-bg: #5e1a26;       // crimson تیره برای dark mode
   --header-desc-text: #FFF;
   --tags-color: #777777;
-  --code-bg: #2a2b2e;
+  --tags-bg: #3d1218;              // crimson خیلی تیره
+  --tags-text: #f0a0a8;            // crimson روشن
+  --code-bg: #1e2023;
   --table-border: rgba(255, 255, 255, 0.1);
-  --toggle-track: #c0504d;
-  --toggle-thumb: #fff;
-  --toggle-icon-color: #d4d4d4;
+  --toggle-track: #C9A84C;         // طلایی
+  --toggle-thumb: #111214;
+  --toggle-icon-color: #C9A84C;
+  --accent-gold: #C9A84C;
 }
 
 // Smooth transition for all elements on theme switch
