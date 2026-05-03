@@ -12,6 +12,24 @@ feature-img: "assets/img/SNF/header.png"
     <h2>Blogging about hacking & Maths, Physics, history...</h2>
   </div>
  <div class="posts">
+ <div class="post-teaser">
+      <header>
+        <h1>
+          <a class="post-link" href="/2026/05/03/Dalitz.html">
+            Dalitz Plots: Reading the Matrix Element from a Scatter Plot
+          </a>
+        </h1>
+        <p class="meta">
+          May 03, 2026
+        </p>
+      </header>
+      <div class="excerpt">
+      In a three-body decay, the Dalitz plot maps event density directly onto |ℳ|² — flat means constant amplitude, a gradient reveals momentum dependence, and a band signals a resonance. Three worked examples with interactive plots show how to read the matrix element by eye.<br>
+        <a class="button" href="/2026/05/03/Dalitz.html">
+          Continue reading
+        </a>
+      </div>
+   </div>
   <div class="post-teaser">
       <header>
         <h1>
