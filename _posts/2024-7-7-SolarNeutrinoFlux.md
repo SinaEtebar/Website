@@ -219,16 +219,16 @@ function snfCopy(btn){
 </script>
 
 <!-- ── CANVAS PLOT ─────────────────────────────────────────────── -->
+
 <script>
 (function(){
   var SPECS = {
-    // برای هر بخش، یک رنگ روشن (fill) و یک رنگ تیره (darkFill) تعریف کردیم
-    pp:  {fn:function(e){var em=0.42341;return(e>0&&e<=em)?Math.pow(e,2.75)*Math.pow(em-e,1):0;}, em:0.42341, total:5.98e10, fill:'#F2C4AE', darkFill:'#4A1E1E', stroke:'#111', lw:1.5, dash:false, z:1},
-    b8:  {fn:function(e){var em=16.0;return(e>=0.1&&e<=em)?Math.pow(e,2.25)*Math.pow(em-e,3.0)*Math.exp(-0.2*e):0;}, em:16.0, total:5.46e6,  fill:'#C5DDB5', darkFill:'#223322', stroke:'#111', lw:1.5, dash:false, z:2},
-    hep: {fn:function(e){var em=18.778;return(e>=0.1&&e<=em)? Math.pow(e,2.25)*Math.pow(em-e,3.) + 1.2e-4 :0;}, em:18.778, total:7.98e3,  fill:'#C0B6D4', darkFill:'#27243B', stroke:'#111', lw:1.5, dash:false, z:3},
-    n13: {fn:function(e){var em=1.1982;return(e>0&&e<=em)?Math.pow(e,2)*Math.pow(em-e,1):0;}, em:1.1982,  total:2.78e8,  fill:null,     stroke:'#333', lw:1.2, dash:true,  z:4},
-    o15: {fn:function(e){var em=1.7317;return(e>0&&e<=em)?Math.pow(e,2)*Math.pow(em-e,1):0;}, em:1.7317,  total:2.05e8,  fill:null,     stroke:'#333', lw:1.2, dash:true,  z:4},
-    f17: {fn:function(e){var em=1.7364;return(e>0&&e<=em)?Math.pow(e,2)*Math.pow(em-e,1):0;}, em:1.7364,  total:5.29e6,  fill:null,     stroke:'#333', lw:1.2, dash:true,  z:4}
+    pp:  {fn:function(e){var em=0.42341;return(e>0&&e<=em)?Math.pow(e,2.75)*Math.pow(em-e,1):0;}, em:0.42341, total:5.98e10, fill:'#F2C4AE', darkFill:'#6b3020', stroke:'#111', lw:1.5, dash:false, z:1},
+    b8:  {fn:function(e){var em=16.0;return(e>=0.1&&e<=em)?Math.pow(e,2.25)*Math.pow(em-e,3.0)*Math.exp(-0.2*e):0;}, em:16.0, total:5.46e6,  fill:'#C5DDB5', darkFill:'#2a4a28', stroke:'#111', lw:1.5, dash:false, z:2},
+    hep: {fn:function(e){var em=18.778;return(e>=0.1&&e<=em)?Math.pow(e,2.25)*Math.pow(em-e,3.)+1.2e-4:0;}, em:18.778, total:7.98e3, fill:'#C0B6D4', darkFill:'#302850', stroke:'#111', lw:1.5, dash:false, z:3},
+    n13: {fn:function(e){var em=1.1982;return(e>0&&e<=em)?Math.pow(e,2)*Math.pow(em-e,1):0;}, em:1.1982, total:2.78e8, fill:null, stroke:'#333', lw:1.2, dash:true, z:4},
+    o15: {fn:function(e){var em=1.7317;return(e>0&&e<=em)?Math.pow(e,2)*Math.pow(em-e,1):0;}, em:1.7317, total:2.05e8, fill:null, stroke:'#333', lw:1.2, dash:true, z:4},
+    f17: {fn:function(e){var em=1.7364;return(e>0&&e<=em)?Math.pow(e,2)*Math.pow(em-e,1):0;}, em:1.7364, total:5.29e6, fill:null, stroke:'#333', lw:1.2, dash:true, z:4}
   };
 
   Object.keys(SPECS).forEach(function(k){
@@ -251,144 +251,145 @@ function snfCopy(btn){
     var canvas=document.getElementById('snf-canvas');
     if(!canvas)return;
     var W=canvas.offsetWidth||680;
-    var H=Math.min(Math.round(W*0.92), 640);
+    var H=Math.min(Math.round(W*0.92),640);
     var dpr=window.devicePixelRatio||1;
     canvas.width=W*dpr; canvas.height=H*dpr;
     var ctx=canvas.getContext('2d');
     ctx.scale(dpr,dpr);
-    var w=W,h=H;
+    var w=W, h=H;
     var pad={l:68,r:16,t:18,b:48};
     var pw=w-pad.l-pad.r, ph=h-pad.t-pad.b;
 
-    var style = getComputedStyle(document.body);
-    var textC = style.getPropertyValue('--text-color').trim() || '#111';
-    var bgC = style.getPropertyValue('--bg-color').trim() || '#fafafa';
-    var gridC = 'rgba(128,128,128,0.2)';
-    var labelC = (textC === '#111' || textC === 'black' || textC === '#000000') ? '#832434' : '#ff7a8a';
+    // ── تشخیص تم مستقیم از data-theme ──────────────────────────
+    var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
 
-    // تشخیص بسیار ساده: اگر پس‌زمینه تیره است، پس دارک مودیم
-    var isDark = false;
-    if(bgC !== '#fafafa' && bgC !== '#ffffff' && bgC !== 'white' && bgC !== 'rgb(255, 255, 255)') {
-        isDark = true;
-    }
+    var style  = getComputedStyle(document.body);
+    var textC  = style.getPropertyValue('--text-color').trim() || (isDark ? '#d4d4d4' : '#111');
+    var bgC    = style.getPropertyValue('--bg-color').trim()   || (isDark ? '#111214' : '#fafafa');
+    var gridC  = isDark ? 'rgba(255,255,255,0.08)' : 'rgba(128,128,128,0.2)';
+    var labelC = isDark ? '#C9A84C' : '#832434';   // طلایی در dark، crimson در light
+    var lineC  = isDark ? '#C9A84C' : textC;        // خطوط ⁷Be و pep
 
     ctx.fillStyle=bgC; ctx.fillRect(0,0,w,h);
 
     ctx.save();
-    ctx.rect(pad.l, pad.t, pw, ph);
+    ctx.rect(pad.l,pad.t,pw,ph);
     ctx.clip();
 
     var yBase=ly(YMIN,ph,pad.t);
 
+    // ── fills ────────────────────────────────────────────────────
     ['pp','b8','hep'].forEach(function(k){
       var sp=SPECS[k];
       ctx.beginPath();
-      ctx.moveTo(lx(XMIN, pw, pad.l), yBase);
-
-      for(var si=0; si<=N; si++){
-        var e = Math.pow(10, Math.log10(XMIN) + si*(Math.log10(XMAX)-Math.log10(XMIN))/N);
-        var y = sp.norm(e)*sp.total;
-        if(e <= sp.em) {
-          ctx.lineTo(lx(e, pw, pad.l), y>YMIN ? ly(y, ph, pad.t) : yBase);
-        }
+      ctx.moveTo(lx(XMIN,pw,pad.l), yBase);
+      for(var si=0;si<=N;si++){
+        var e=Math.pow(10,Math.log10(XMIN)+si*(Math.log10(XMAX)-Math.log10(XMIN))/N);
+        var y=sp.norm(e)*sp.total;
+        if(e<=sp.em) ctx.lineTo(lx(e,pw,pad.l), y>YMIN?ly(y,ph,pad.t):yBase);
       }
-      if(sp.em < XMAX) {
-        ctx.lineTo(lx(sp.em, pw, pad.l), yBase);
-      }
-      ctx.lineTo(lx(XMAX, pw, pad.l), yBase);
+      if(sp.em<XMAX) ctx.lineTo(lx(sp.em,pw,pad.l),yBase);
+      ctx.lineTo(lx(XMAX,pw,pad.l),yBase);
       ctx.closePath();
-
-      // انتخاب هوشمند رنگ: اگر دارک بود و رنگ دارک داشتیم، از آن استفاده کن
-      ctx.fillStyle = (isDark && sp.darkFill) ? sp.darkFill : sp.fill; 
-      ctx.globalAlpha=0.88; 
-      ctx.fill(); 
-      ctx.globalAlpha=1;
+      ctx.fillStyle = (isDark && sp.darkFill) ? sp.darkFill : sp.fill;
+      ctx.globalAlpha=0.92; ctx.fill(); ctx.globalAlpha=1;
     });
 
+    // ── contour lines ─────────────────────────────────────────────
     Object.keys(SPECS).forEach(function(k){
       var sp=SPECS[k];
       ctx.beginPath();
-      ctx.strokeStyle= (sp.stroke === '#111' || sp.stroke === '#333') ? textC : sp.stroke; 
+      // dash lines در dark mode کمی روشن‌تر
+      ctx.strokeStyle = sp.dash ? (isDark?'rgba(200,200,200,0.6)':'#555') : textC;
       ctx.lineWidth=sp.lw;
       if(sp.dash) ctx.setLineDash([4,3]); else ctx.setLineDash([]);
-
-      var firstPoint = true;
-      for(var si=0; si<=N; si++){
-        var e = Math.pow(10, Math.log10(XMIN) + si*(Math.log10(XMAX)-Math.log10(XMIN))/N);
-        var y = sp.norm(e)*sp.total;
-        if(e <= sp.em) {
-          var cx = lx(e, pw, pad.l);
-          var cy = ly(y, ph, pad.t);
-          if(firstPoint) { ctx.moveTo(cx, cy); firstPoint = false; }
-          else { ctx.lineTo(cx, cy); }
+      var first=true;
+      for(var si=0;si<=N;si++){
+        var e=Math.pow(10,Math.log10(XMIN)+si*(Math.log10(XMAX)-Math.log10(XMIN))/N);
+        var y=sp.norm(e)*sp.total;
+        if(e<=sp.em){
+          var cx=lx(e,pw,pad.l), cy=ly(y,ph,pad.t);
+          first?ctx.moveTo(cx,cy):ctx.lineTo(cx,cy); first=false;
         }
       }
-      if(sp.em < XMAX) ctx.lineTo(lx(sp.em, pw, pad.l), yBase);
+      if(sp.em<XMAX) ctx.lineTo(lx(sp.em,pw,pad.l),yBase);
       ctx.stroke();
     });
     ctx.setLineDash([]);
     ctx.restore();
 
+    // ── border ───────────────────────────────────────────────────
     ctx.strokeStyle=textC; ctx.lineWidth=1.2;
-    ctx.strokeRect(pad.l, pad.t, pw, ph);
+    ctx.strokeRect(pad.l,pad.t,pw,ph);
 
-    for(var yi=0; yi<=14; yi+=2){
+    // ── y grid + labels ──────────────────────────────────────────
+    for(var yi=0;yi<=14;yi+=2){
       var gy=ly(Math.pow(10,yi),ph,pad.t);
       ctx.beginPath(); ctx.moveTo(pad.l,gy); ctx.lineTo(pad.l+pw,gy);
       ctx.strokeStyle=gridC; ctx.lineWidth=0.6; ctx.stroke();
       ctx.fillStyle=textC; ctx.font='11px sans-serif'; ctx.textAlign='right';
-      ctx.fillText('10', pad.l-16, gy+4);
-      ctx.font='8px sans-serif'; ctx.fillText(String(yi), pad.l-7, gy-4);
+      ctx.fillText('10',pad.l-16,gy+4);
+      ctx.font='8px sans-serif'; ctx.fillText(String(yi),pad.l-7,gy-4);
     }
 
-    var xTicks=[0.1,0.2,0.5,1,2,5,10,20];
-    xTicks.forEach(function(xv){
+    // ── x grid + labels ──────────────────────────────────────────
+    [0.1,0.2,0.5,1,2,5,10,20].forEach(function(xv){
       var gx=lx(xv,pw,pad.l);
       ctx.beginPath(); ctx.moveTo(gx,pad.t); ctx.lineTo(gx,pad.t+ph);
       ctx.strokeStyle=gridC; ctx.lineWidth=0.5; ctx.stroke();
       ctx.fillStyle=textC; ctx.font='12px sans-serif'; ctx.textAlign='center';
-      ctx.fillText(String(xv), gx, h-pad.b+18);
+      ctx.fillText(String(xv),gx,h-pad.b+18);
     });
 
+    // ── axis labels ───────────────────────────────────────────────
     ctx.fillStyle=labelC; ctx.font='bold 16px serif'; ctx.textAlign='center';
-    ctx.fillText('Eν [MeV]', pad.l+pw/2, h-10);
-
+    ctx.fillText('Eν [MeV]',pad.l+pw/2,h-10);
     ctx.save();
-    ctx.translate(16, pad.t+ph/2); ctx.rotate(-Math.PI/2);
+    ctx.translate(16,pad.t+ph/2); ctx.rotate(-Math.PI/2);
     ctx.fillStyle=labelC; ctx.font='bold 14px serif'; ctx.textAlign='center';
-    ctx.fillText('Flux at 1 AU (cm⁻²s⁻¹MeV⁻¹) [for lines, cm⁻²s⁻¹]', 0, 0);
+    ctx.fillText('Flux at 1 AU (cm⁻²s⁻¹MeV⁻¹) [for lines, cm⁻²s⁻¹]',0,0);
     ctx.restore();
 
+    // ── ⁷Be و pep lines — طلایی در dark ─────────────────────────
+    var yBase2=ly(YMIN,ph,pad.t);
     BE7.forEach(function(ln){
-      var lxv=lx(ln.E,pw,pad.l);
-      var lyv=ly(ln.flux,ph,pad.t);
-      ctx.beginPath(); ctx.moveTo(lxv,yBase); ctx.lineTo(lxv,lyv);
-      ctx.strokeStyle=textC; ctx.lineWidth=2.5; ctx.stroke();
+      var lxv=lx(ln.E,pw,pad.l), lyv=ly(ln.flux,ph,pad.t);
+      ctx.beginPath(); ctx.moveTo(lxv,yBase2); ctx.lineTo(lxv,lyv);
+      ctx.strokeStyle=lineC; ctx.lineWidth=2.5; ctx.stroke();
+      // dot at top
+      ctx.beginPath(); ctx.arc(lxv,lyv,3,0,2*Math.PI);
+      ctx.fillStyle=lineC; ctx.fill();
     });
     var pepX=lx(PEP.E,pw,pad.l), pepY=ly(PEP.flux,ph,pad.t);
-    ctx.beginPath(); ctx.moveTo(pepX,yBase); ctx.lineTo(pepX,pepY);
-    ctx.strokeStyle=textC; ctx.lineWidth=2.5; ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(pepX,yBase2); ctx.lineTo(pepX,pepY);
+    ctx.strokeStyle=lineC; ctx.lineWidth=2.5; ctx.stroke();
+    ctx.beginPath(); ctx.arc(pepX,pepY,3,0,2*Math.PI);
+    ctx.fillStyle=lineC; ctx.fill();
 
+    // ── ⁷Be double arrow ─────────────────────────────────────────
     var be1x=lx(0.3843,pw,pad.l), be2x=lx(0.8613,pw,pad.l);
     var arY=ly(2.5e3,ph,pad.t);
     ctx.beginPath(); ctx.moveTo(be1x+2,arY); ctx.lineTo(be2x-2,arY);
-    ctx.strokeStyle=textC; ctx.lineWidth=1.2; ctx.stroke();
+    ctx.strokeStyle=lineC; ctx.lineWidth=1.2; ctx.stroke();
     [[be1x,1],[be2x,-1]].forEach(function(p){
       ctx.beginPath(); ctx.moveTo(p[0]+p[1]*2,arY);
       ctx.lineTo(p[0]+p[1]*8,arY-3.5); ctx.lineTo(p[0]+p[1]*8,arY+3.5);
-      ctx.closePath(); ctx.fillStyle=textC; ctx.fill();
+      ctx.closePath(); ctx.fillStyle=lineC; ctx.fill();
     });
-    ctx.fillStyle=textC; ctx.font='14px serif'; ctx.textAlign='center';
-    ctx.fillText('⁷Be', (be1x+be2x)/2, ly(4.5e2,ph,pad.t));
+    ctx.fillStyle=lineC; ctx.font='14px serif'; ctx.textAlign='center';
+    ctx.fillText('⁷Be',(be1x+be2x)/2,ly(4.5e2,ph,pad.t));
 
+    // ── pep arrow + label ─────────────────────────────────────────
     var pepLX=lx(1.78,pw,pad.l), pepLY=ly(1.5e7,ph,pad.t);
     ctx.beginPath(); ctx.moveTo(pepLX,pepLY); ctx.lineTo(pepX+3,pepLY);
-    ctx.strokeStyle=textC; ctx.lineWidth=1.2; ctx.stroke();
-    ctx.beginPath(); ctx.moveTo(pepX+2,pepLY); ctx.lineTo(pepX+8,pepLY-3.5); ctx.lineTo(pepX+8,pepLY+3.5);
-    ctx.closePath(); ctx.fillStyle=textC; ctx.fill();
-    ctx.fillStyle=textC; ctx.font='13px serif'; ctx.textAlign='left';
-    ctx.fillText('pep', pepLX+4, pepLY+4);
+    ctx.strokeStyle=lineC; ctx.lineWidth=1.2; ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(pepX+2,pepLY);
+    ctx.lineTo(pepX+8,pepLY-3.5); ctx.lineTo(pepX+8,pepLY+3.5);
+    ctx.closePath(); ctx.fillStyle=lineC; ctx.fill();
+    ctx.fillStyle=lineC; ctx.font='13px serif'; ctx.textAlign='left';
+    ctx.fillText('pep',pepLX+4,pepLY+4);
 
+    // ── annotations ───────────────────────────────────────────────
     [
       {x:0.24,  y:6.5e10, t:'pp',   big:true},
       {x:7.5,   y:1.2e5,  t:'⁸B',   big:true},
@@ -400,23 +401,22 @@ function snfCopy(btn){
       ctx.fillStyle=textC;
       ctx.font=(a.big?'bold 15px':'13px')+' serif';
       ctx.textAlign='left';
-      ctx.fillText(a.t, lx(a.x,pw,pad.l), ly(a.y,ph,pad.t));
+      ctx.fillText(a.t,lx(a.x,pw,pad.l),ly(a.y,ph,pad.t));
     });
   }
 
-  document.addEventListener('DOMContentLoaded', draw);
-  window.addEventListener('resize', draw);
-  setTimeout(draw, 150);
+  document.addEventListener('DOMContentLoaded',draw);
+  window.addEventListener('resize',draw);
+  setTimeout(draw,150);
 
-  if (typeof MutationObserver !== 'undefined') {
-    var observer = new MutationObserver(function(mutations) {
-      setTimeout(draw, 30);
-    });
-    observer.observe(document.documentElement, { attributes: true });
-    observer.observe(document.body, { attributes: true });
+  if(typeof MutationObserver!=='undefined'){
+    var obs=new MutationObserver(function(){setTimeout(draw,30);});
+    obs.observe(document.documentElement,{attributes:true});
+    obs.observe(document.body,{attributes:true});
   }
 })();
 </script>
+
 
 ---
 
