@@ -30,14 +30,17 @@ feature-img: "assets/img/SNF/head.png"
 .snf-code-wrap{position:relative}
 .snf-copy{position:absolute;top:10px;right:20px;font-size:11px;padding:4px 10px;border-radius:5px;border:1px solid var(--border-color);background:var(--bg-color,#fafafa);color:var(--text-color);cursor:pointer;opacity:.7;transition:opacity .15s;z-index:2}
 .snf-copy:hover{opacity:1}
+/* اضافه کردن padding به بخش کدها برای فاصله گرفتن از دیواره داخلی */
 .snf-panel code{font-size:12px;line-height:1.6}
+/* افزایش فاصله داخلی نمودار برای زیباتر شدن و دوری از دیواره‌ها */
 .snf-plot-inner{padding:24px;box-sizing:border-box}
 .snf-note{font-size:11px;opacity:.5;margin-top:8px;font-style:italic}
 #snf-canvas{width:100%;display:block;border-radius:6px}
+/* استایل هوشمند پیش‌نمایش کد و اسکرول‌بار هماهنگ با تم */
 .snf-panel pre {
   margin: 0;
   padding: 16px;
-  border-radius: 0 0 8px 8px
+  border-radius: 0 0 8px 8px;
   max-height: 440px;
   overflow: auto;
   box-sizing: border-box;
@@ -294,6 +297,7 @@ function snfCopy(btn){
     Object.keys(SPECS).forEach(function(k){
       var sp=SPECS[k];
       ctx.beginPath();
+
       ctx.strokeStyle= (sp.stroke === '#111' || sp.stroke === '#333') ? textC : sp.stroke; 
       ctx.lineWidth=sp.lw;
       if(sp.dash) ctx.setLineDash([4,3]); else ctx.setLineDash([]);
