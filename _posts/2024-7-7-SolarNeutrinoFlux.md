@@ -28,15 +28,42 @@ feature-img: "assets/img/SNF/head.png"
 .snf-panel{display:none;border:1.5px solid var(--border-color);border-top:none;border-radius:0 0 8px 8px}
 .snf-panel.active{display:block}
 .snf-code-wrap{position:relative}
-.snf-copy{position:absolute;top:10px;right:10px;font-size:11px;padding:4px 10px;border-radius:5px;border:1px solid var(--border-color);background:var(--bg-color,#fafafa);color:var(--text-color);cursor:pointer;opacity:.7;transition:opacity .15s;z-index:2}
+.snf-copy{position:absolute;top:10px;right:20px;font-size:11px;padding:4px 10px;border-radius:5px;border:1px solid var(--border-color);background:var(--bg-color,#fafafa);color:var(--text-color);cursor:pointer;opacity:.7;transition:opacity .15s;z-index:2}
 .snf-copy:hover{opacity:1}
-/* اضافه کردن padding به بخش کدها برای فاصله گرفتن از دیواره داخلی */
-.snf-panel pre{margin:0;padding:16px;border-radius:0 0 8px 8px;max-height:440px;overflow:auto;box-sizing:border-box}
 .snf-panel code{font-size:12px;line-height:1.6}
-/* افزایش فاصله داخلی نمودار برای زیباتر شدن و دوری از دیواره‌ها */
 .snf-plot-inner{padding:24px;box-sizing:border-box}
 .snf-note{font-size:11px;opacity:.5;margin-top:8px;font-style:italic}
 #snf-canvas{width:100%;display:block;border-radius:6px}
+.snf-panel pre {
+  margin: 0;
+  padding: 16px;
+  border-radius: 0 0 8px 8px
+  max-height: 440px;
+  overflow: auto;
+  box-sizing: border-box;
+  /* فایرفاکس: رنگ دستگیره ملایم و پس‌زمینه هماهنگ با تم */
+  scrollbar-color: rgba(128, 128, 128, 0.4) var(--bg-color, #fafafa);
+  scrollbar-width: thin;
+}
+
+/* برای مرورگرهای Chrome, Edge, Safari */
+.snf-panel pre::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.snf-panel pre::-webkit-scrollbar-track {
+  /* استفاده از متغیر تم برای هماهنگی کامل در حالت روشن و تاریک */
+  background: var(--bg-color, #fafafa); 
+  border-radius: 0 0 8px 0;
+}
+.snf-panel pre::-webkit-scrollbar-thumb {
+  /* یک رنگ خاکستری ملایم که هم در تم روشن و هم تاریک خوب دیده می‌شود */
+  background: rgba(128, 128, 128, 0.4); 
+  border-radius: 4px;
+}
+.snf-panel pre::-webkit-scrollbar-thumb:hover {
+  background: rgba(128, 128, 128, 0.6); /* تیره شدن دستگیره هنگام هاور */
+}
 </style>
 
 <div class="snf-tabs">
@@ -193,11 +220,9 @@ function snfCopy(btn){
 (function(){
   var SPECS = {
     pp:  {fn:function(e){var em=0.42341;return(e>0&&e<=em)?Math.pow(e,2.75)*Math.pow(em-e,1):0;}, em:0.42341, total:5.98e10, fill:'#F2C4AE', stroke:'#111', lw:1.5, dash:false, z:1},
-    // اصلاح تابع B8: شروع در 0.1 MeV به حدود 55 می‌رسد (کمتر از 100)
     b8:  {fn:function(e){var em=16.0;return(e>=0.1&&e<=em)?Math.pow(e,2.25)*Math.pow(em-e,3.0)*Math.exp(-0.2*e):0;}, em:16.0, total:5.46e6,  fill:'#C5DDB5', stroke:'#111', lw:1.5, dash:false, z:2},
-    // اصلاح تابع hep: شروع در 0.1 MeV به محدوده 0.01 می‌رسد (بسیار کمتر از 1)
     hep: {fn:function(e){var em=18.778;return(e>=0.1&&e<=em)? Math.pow(e,2.25)*Math.pow(em-e,3.) + 1.2e-4 :0;}, em:18.778, total:7.98e3,  fill:'#C0B6D4', stroke:'#111', lw:1.5, dash:false, z:3},
-   n13: {fn:function(e){var em=1.1982;return(e>0&&e<=em)?Math.pow(e,2)*Math.pow(em-e,1):0;}, em:1.1982,  total:2.78e8,  fill:null,     stroke:'#333', lw:1.2, dash:true,  z:4},
+    n13: {fn:function(e){var em=1.1982;return(e>0&&e<=em)?Math.pow(e,2)*Math.pow(em-e,1):0;}, em:1.1982,  total:2.78e8,  fill:null,     stroke:'#333', lw:1.2, dash:true,  z:4},
     o15: {fn:function(e){var em=1.7317;return(e>0&&e<=em)?Math.pow(e,2)*Math.pow(em-e,1):0;}, em:1.7317,  total:2.05e8,  fill:null,     stroke:'#333', lw:1.2, dash:true,  z:4},
     f17: {fn:function(e){var em=1.7364;return(e>0&&e<=em)?Math.pow(e,2)*Math.pow(em-e,1):0;}, em:1.7364,  total:5.29e6,  fill:null,     stroke:'#333', lw:1.2, dash:true,  z:4}
   };
@@ -231,11 +256,12 @@ function snfCopy(btn){
     var pad={l:68,r:16,t:18,b:48};
     var pw=w-pad.l-pad.r, ph=h-pad.t-pad.b;
 
-    var bgC='#fafafa';
-    var gridC='rgba(0,0,0,0.06)';
-    var axC='rgba(0,0,0,0.15)';
-    var textC='rgba(0,0,0,0.85)';
-    var labelC='#832434';
+    // --- خواندن رنگ‌ها از متغیرهای CSS ---
+    var style = getComputedStyle(document.body);
+    var textC = style.getPropertyValue('--text-color').trim() || '#111';
+    var bgC = style.getPropertyValue('--bg-color').trim() || '#fafafa';
+    var gridC = 'rgba(128,128,128,0.2)'; // رنگ خاکستری ملایم برای خطوط شبکه
+    var labelC = (textC === '#111' || textC === 'black') ? '#832434' : '#ff7a8a'; // تنظیم هوشمند رنگ عنوان محور
 
     ctx.fillStyle=bgC; ctx.fillRect(0,0,w,h);
 
@@ -268,7 +294,8 @@ function snfCopy(btn){
     Object.keys(SPECS).forEach(function(k){
       var sp=SPECS[k];
       ctx.beginPath();
-      ctx.strokeStyle=sp.stroke; ctx.lineWidth=sp.lw;
+      ctx.strokeStyle= (sp.stroke === '#111' || sp.stroke === '#333') ? textC : sp.stroke; 
+      ctx.lineWidth=sp.lw;
       if(sp.dash) ctx.setLineDash([4,3]); else ctx.setLineDash([]);
 
       var firstPoint = true;
@@ -291,13 +318,13 @@ function snfCopy(btn){
     ctx.setLineDash([]);
     ctx.restore();
 
-    ctx.strokeStyle='#111'; ctx.lineWidth=1.2;
+    ctx.strokeStyle=textC; ctx.lineWidth=1.2;
     ctx.strokeRect(pad.l, pad.t, pw, ph);
 
     for(var yi=0; yi<=14; yi+=2){
       var gy=ly(Math.pow(10,yi),ph,pad.t);
       ctx.beginPath(); ctx.moveTo(pad.l,gy); ctx.lineTo(pad.l+pw,gy);
-      ctx.strokeStyle=yi%4===0?'rgba(0,0,0,0.15)':gridC; ctx.lineWidth=0.6; ctx.stroke();
+      ctx.strokeStyle=gridC; ctx.lineWidth=0.6; ctx.stroke();
       
       ctx.fillStyle=textC; ctx.font='11px sans-serif'; ctx.textAlign='right';
       ctx.fillText('10', pad.l-16, gy+4);
@@ -308,7 +335,7 @@ function snfCopy(btn){
     xTicks.forEach(function(xv){
       var gx=lx(xv,pw,pad.l);
       ctx.beginPath(); ctx.moveTo(gx,pad.t); ctx.lineTo(gx,pad.t+ph);
-      ctx.strokeStyle='rgba(0,0,0,0.12)'; ctx.lineWidth=0.5; ctx.stroke();
+      ctx.strokeStyle=gridC; ctx.lineWidth=0.5; ctx.stroke();
       
       ctx.fillStyle=textC; ctx.font='12px sans-serif'; ctx.textAlign='center';
       ctx.fillText(String(xv), gx, h-pad.b+18);
@@ -327,30 +354,30 @@ function snfCopy(btn){
       var lxv=lx(ln.E,pw,pad.l);
       var lyv=ly(ln.flux,ph,pad.t);
       ctx.beginPath(); ctx.moveTo(lxv,yBase); ctx.lineTo(lxv,lyv);
-      ctx.strokeStyle='#111'; ctx.lineWidth=2.5; ctx.stroke();
+      ctx.strokeStyle=textC; ctx.lineWidth=2.5; ctx.stroke();
     });
     var pepX=lx(PEP.E,pw,pad.l), pepY=ly(PEP.flux,ph,pad.t);
     ctx.beginPath(); ctx.moveTo(pepX,yBase); ctx.lineTo(pepX,pepY);
-    ctx.strokeStyle='#111'; ctx.lineWidth=2.5; ctx.stroke();
+    ctx.strokeStyle=textC; ctx.lineWidth=2.5; ctx.stroke();
 
     var be1x=lx(0.3843,pw,pad.l), be2x=lx(0.8613,pw,pad.l);
     var arY=ly(2.5e3,ph,pad.t);
     ctx.beginPath(); ctx.moveTo(be1x+2,arY); ctx.lineTo(be2x-2,arY);
-    ctx.strokeStyle='#111'; ctx.lineWidth=1.2; ctx.stroke();
+    ctx.strokeStyle=textC; ctx.lineWidth=1.2; ctx.stroke();
     [[be1x,1],[be2x,-1]].forEach(function(p){
       ctx.beginPath(); ctx.moveTo(p[0]+p[1]*2,arY);
       ctx.lineTo(p[0]+p[1]*8,arY-3.5); ctx.lineTo(p[0]+p[1]*8,arY+3.5);
-      ctx.closePath(); ctx.fillStyle='#111'; ctx.fill();
+      ctx.closePath(); ctx.fillStyle=textC; ctx.fill();
     });
-    ctx.fillStyle='#111'; ctx.font='14px serif'; ctx.textAlign='center';
+    ctx.fillStyle=textC; ctx.font='14px serif'; ctx.textAlign='center';
     ctx.fillText('⁷Be', (be1x+be2x)/2, ly(4.5e2,ph,pad.t));
 
     var pepLX=lx(1.78,pw,pad.l), pepLY=ly(1.5e7,ph,pad.t);
     ctx.beginPath(); ctx.moveTo(pepLX,pepLY); ctx.lineTo(pepX+3,pepLY);
-    ctx.strokeStyle='#111'; ctx.lineWidth=1.2; ctx.stroke();
+    ctx.strokeStyle=textC; ctx.lineWidth=1.2; ctx.stroke();
     ctx.beginPath(); ctx.moveTo(pepX+2,pepLY); ctx.lineTo(pepX+8,pepLY-3.5); ctx.lineTo(pepX+8,pepLY+3.5);
-    ctx.closePath(); ctx.fillStyle='#111'; ctx.fill();
-    ctx.fillStyle='#111'; ctx.font='13px serif'; ctx.textAlign='left';
+    ctx.closePath(); ctx.fillStyle=textC; ctx.fill();
+    ctx.fillStyle=textC; ctx.font='13px serif'; ctx.textAlign='left';
     ctx.fillText('pep', pepLX+4, pepLY+4);
 
     [
@@ -361,16 +388,24 @@ function snfCopy(btn){
       {x:0.104, y:2.0e6,  t:'¹⁵O',  big:false},
       {x:0.104, y:2.2e5,  t:'¹⁷F',  big:false}
     ].forEach(function(a){
-      ctx.fillStyle='#111';
+      ctx.fillStyle=textC;
       ctx.font=(a.big?'bold 15px':'13px')+' serif';
       ctx.textAlign='left';
       ctx.fillText(a.t, lx(a.x,pw,pad.l), ly(a.y,ph,pad.t));
     });
   }
 
-  document.addEventListener('DOMContentLoaded',draw);
-  window.addEventListener('resize',draw);
-  setTimeout(draw,150);
+  document.addEventListener('DOMContentLoaded', draw);
+  window.addEventListener('resize', draw);
+  setTimeout(draw, 150);
+
+  if (typeof MutationObserver !== 'undefined') {
+    var observer = new MutationObserver(function(mutations) {
+      setTimeout(draw, 30);
+    });
+    observer.observe(document.documentElement, { attributes: true });
+    observer.observe(document.body, { attributes: true });
+  }
 })();
 </script>
 
