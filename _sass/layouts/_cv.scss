@@ -1,51 +1,247 @@
-.cv{
-	margin: 0 auto;/*center in parent*/
-	max-width: 65em;
+// ── CV page ────────────────────────────────────────────────
+$cv-accent:   #832434;
+$cv-line:     rgba(0,0,0,.10);
+$cv-muted:    #767676;
+$cv-bg-tag:   #f3f3f3;
+$cv-date-w:   9em;
+$cv-spine-w:  1.8em;
+
+.cv {
+  margin: 0 auto;
+  max-width: 40em;
 }
 
-
-.cv h2{
-	margin-top: 2em;
+// ── PDF button
+.cv-pdf-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .45em;
+  font-size: .82em;
+  font-weight: 500;
+  padding: .5em 1.1em;
+  border: none;
+  border-radius: 6px;
+  background: #2a2a2a;
+  color: #fff;
+  text-decoration: none;
+  margin: 0 0 2.2em calc(#{$cv-date-w} + #{$cv-spine-w});
+  transition: background .15s;
+  &:hover {
+    background: $cv-accent;
+    color: #fff;
+    text-decoration: none;
+  }
+  svg { flex-shrink: 0; }
 }
 
+// ── Section header
+.cv-section { margin-bottom: 2.4em; }
 
-.cv table {
-	margin: 0 auto;/*center in parent*/
-    max-width: 55em;
-    position: relative;/*so that children get aligned relatively*/
-    overflow: visible;/*remove scrollbar*/
+.cv-section-title {
+  font-size: .72em;
+  font-weight: 600;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  color: $cv-muted;
+  margin: 0 0 1.1em calc(#{$cv-date-w} + #{$cv-spine-w});
+  padding-bottom: .35em;
+  border-bottom: 1px solid $cv-line;
 }
 
-.cv tr {
+// ── Content-aligned wrapper (for languages, personal, etc.)
+.cv-aligned {
+  padding-left: calc(#{$cv-date-w} + #{$cv-spine-w});
 }
 
-.cv tr:hover {
-	border: 1px solid #800000;
+// ── Timeline row
+.cv-item {
+  display: flex;
+  align-items: flex-start;
+  position: relative;
 }
 
-.cv tr:last-child > td {
-	border-bottom: 0;
+.cv-date {
+  width: $cv-date-w;
+  flex-shrink: 0;
+  font-size: .75em;
+  color: $cv-muted;
+  text-align: right;
+  padding-right: 1em;
+  padding-top: .22em;
+  line-height: 1.5;
+  white-space: nowrap;
 }
 
-
-.cv td {
-    padding-top: 0.5em 8px 0.5em 8px;
-    text-align: left;
-    /* need to overwrite global settings */
-	border: 1px dotted gray;
-	border-color: #F1F1F1 #F1F1F1 grey #F1F1F1;
+.cv-spine {
+  width: $cv-spine-w;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-
-.cv td:first-child {
-	width: 11em;
+.cv-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid $cv-accent;
+  flex-shrink: 0;
+  margin-top: .22em;
+  z-index: 1;
 }
 
-.cv td:nth-child(2) {
-	width: 15em;
-	text-align: center;
+.cv-line-seg {
+  width: 1.5px;
+  background: $cv-line;
+  flex: 1;
+  min-height: 1.8em;
 }
 
-.cv-table img {
-    max-height: 3.5em;
+.cv-item:last-child .cv-line-seg { display: none; }
+
+// ── Content
+.cv-content {
+  flex: 1;
+  padding-bottom: 1.6em;
+}
+
+.cv-logo {
+  height: 1.7em;
+  max-width: 5.5em;
+  object-fit: contain;
+  opacity: .8;
+  display: block;
+  margin-bottom: .4em;
+}
+
+.cv-title {
+  font-size: .96em;
+  font-weight: 600;
+  color: $text-color;
+  margin: 0 0 .1em;
+  line-height: 1.35;
+}
+
+.cv-org {
+  font-size: .84em;
+  color: $cv-muted;
+  margin: 0 0 .25em;
+  line-height: 1.4;
+  a { color: $cv-accent; }
+}
+
+.cv-thesis {
+  font-size: .82em;
+  color: $cv-muted;
+  font-style: italic;
+  margin: .2em 0 0;
+  line-height: 1.45;
+}
+
+// ── Tags
+.cv-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .3em;
+  margin-top: .45em;
+}
+
+.cv-tag {
+  font-size: .74em;
+  padding: .15em .6em;
+  border-radius: 4px;
+  background: $cv-bg-tag;
+  color: $cv-muted;
+  border: 1px solid $border-color;
+}
+
+// ── Collapsible details
+.cv-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: .3em;
+  font-size: .78em;
+  color: $cv-accent;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  margin-top: .4em;
+  font-family: $font-family-main;
+  text-decoration: none;
+  &:hover { text-decoration: underline; }
+  .cv-toggle-icon {
+    display: inline-block;
+    transition: transform .2s;
+    font-style: normal;
+  }
+  &[aria-expanded="true"] .cv-toggle-icon {
+    transform: rotate(90deg);
+  }
+}
+
+.cv-details {
+  display: none;
+  margin-top: .6em;
+  font-size: .84em;
+  color: $cv-muted;
+  line-height: 1.6;
+  border-left: 2px solid $cv-line;
+  padding-left: .85em;
+  &.open { display: block; }
+  ul {
+    margin: .3em 0 0 1em;
+    padding: 0;
+    li { margin-bottom: .2em; }
+  }
+}
+
+// ── Languages
+.cv-lang-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(8.5em, 1fr));
+  gap: .6em;
+  margin-top: .5em;
+}
+
+.cv-lang-card {
+  border: 1px solid $border-color;
+  border-radius: 8px;
+  padding: .7em .85em .65em;
+  background: #fff;
+}
+
+.cv-lang-name {
+  font-size: .86em;
+  font-weight: 600;
+  color: $text-color;
+  margin: 0 0 .12em;
+}
+
+.cv-lang-level {
+  font-size: .74em;
+  color: $cv-muted;
+  margin: 0 0 .45em;
+}
+
+.cv-lang-bar { height: 3px; border-radius: 2px; background: $cv-line; }
+.cv-lang-fill { height: 3px; border-radius: 2px; background: $cv-accent; }
+
+// ── Personal
+.cv-personal {
+  font-size: .86em;
+  color: $cv-muted;
+  margin-top: .4em;
+  table {
+    margin: 0;
+    max-width: none;
+    td {
+      border: none;
+      padding: .15em .8em .15em 0;
+      font-size: 1em;
+      &:first-child { color: $cv-muted; width: 9em; }
+    }
+    tr:hover { border: none; }
+  }
 }
