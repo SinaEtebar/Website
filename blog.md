@@ -30,6 +30,24 @@ feature-img: "assets/img/SNF/header.png"
         </a>
       </div>
    </div>
+   <div class="post-teaser">
+      <header>
+        <h1>
+          <a class="post-link" href="/2025/04/17/SpectralAnalysis.html">
+            Spectral Analysis: From Periodograms to Welch's Method
+          </a>
+        </h1>
+        <p class="meta">
+          April 17, 2025
+        </p>
+      </header>
+      <div class="excerpt">
+      An interactive guide to power spectral density estimation — from the basic periodogram and its limitations, through windowing and spectral leakage, to Bartlett and Welch averaging methods. Includes live Canvas plots for spectral resolution, window comparison, and variance reduction.<br>
+        <a class="button" href="/2025/04/17/SpectralAnalysis.html">
+          Continue reading
+        </a>
+      </div>
+   </div>
   <div class="post-teaser">
       <header>
         <h1>
