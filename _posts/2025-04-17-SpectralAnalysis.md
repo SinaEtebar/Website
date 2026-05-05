@@ -248,12 +248,16 @@ $$ \hat{S}(\Omega) = \frac{\left|\sum_{i=1}^{N} w_i\,x_i\,e^{-j(i-1)\Omega}\righ
   <div class="sa-plot-inner">
     <div class="sa-controls" style="grid-template-columns:1fr;">
       <div class="sa-ctrl">
-        <div class="sa-ctrl-label">N (window length) <span class="sa-ctrl-val" id="win-N-val">128</span></div>
-        <input type="range" min="32" max="512" step="32" value="128" id="win-N" oninput="drawWin()">
+        <div class="sa-ctrl-label">N (window length) <span class="sa-ctrl-val" id="win-N-val">100</span></div>
+        <input type="range" min="32" max="512" step="8" value="100" id="win-N" oninput="drawWin()">
       </div>
     </div>
-    <canvas class="sa-canvas" id="win-canvas" height="220"></canvas>
-    <p class="sa-note">Magnitude (dB) of the three window transforms. Narrower main lobe = better resolution. Lower side lobes = less leakage. Always a tradeoff.</p>
+    <canvas class="sa-canvas" id="win-canvas" height="260"></canvas>
+    <p class="sa-note">
+      Signal: A·sin(2π·0.1·t), fs=8 Hz, nfft=1024.
+      Each spectrum = circular convolution of signal DFT with window DFT (dB).
+      Narrower main lobe = better resolution · Lower side lobes = less leakage.
+    </p>
   </div>
 </div>
 <div class="sa-panel" id="win-code">
@@ -261,62 +265,53 @@ $$ \hat{S}(\Omega) = \frac{\left|\sum_{i=1}^{N} w_i\,x_i\,e^{-j(i-1)\Omega}\righ
     <button class="sa-copy" onclick="saCopy(this)">copy</button>
 <pre><code class="language-python">import numpy as np
 import matplotlib.pyplot as plt
+from scipy.fft import fft, ifft
+from scipy.signal import windows
 
-# ── signal parameters (from WindowingExa.m) ───────────────────────
-N   = 100          # number of samples
-fs  = 8            # sampling frequency (Hz)
-fr  = 0.1          # signal frequency (Hz)
+N   = 100
+fs  = 8
+A   = 1
+fr  = 0.1
 ts  = 1.0 / fs
-t   = np.arange(N) * ts
-x1  = np.sin(2 * np.pi * fr * t)
 
-# ── FFT parameters ────────────────────────────────────────────────
-nfft = 1024        # zero-padded DFT length
+t     = np.arange(N) * ts
+x1    = A * np.sin(2 * np.pi * fr * t)
 
-xdft = np.fft.fft(x1, nfft)
+nfft  = 1024
+xdft  = fft(x1, nfft)
+
+def to_db(x):
+    return 20 * np.log10(np.abs(x) + 1e-12)
+
+def cconv_custom(a, b, n):
+    return ifft(fft(a, n) * fft(b, n), n)
 
 # ── windows ───────────────────────────────────────────────────────
-windows = {
-    'Rectangular': np.ones(N),
-    'Hanning':     np.hanning(N),
-    'Triangular':  np.bartlett(N),   # Bartlett = triangular in scipy
-}
+wr = np.ones(N)
+wh = windows.hann(N)
+wt = windows.triang(N)
 
-def windowed_spectrum_db(x_dft, window, nfft):
-    """Circular convolution via FFT, result in dB (equivalent to MATLAB cconv + db)."""
-    w_dft  = np.fft.fft(window, nfft)
-    conv   = np.fft.ifft(x_dft * w_dft) * nfft   # circular convolution
-    return 20 * np.log10(np.abs(conv / nfft) + 1e-12)
+# ── circular convolution of signal DFT with window DFT ───────────
+conv_rect   = to_db(1/nfft * cconv_custom(xdft, fft(wr, nfft), nfft))
+conv_hann   = to_db(1/nfft * cconv_custom(xdft, fft(wh, nfft), nfft))
+conv_triang = to_db(1/nfft * cconv_custom(xdft, fft(wt, nfft), nfft))
 
 # ── one-sided frequency axis [0, fs/2] ───────────────────────────
 dfr  = 1.0 / (nfft * ts)
 frs  = np.arange(nfft) * dfr
-sel  = slice(0, nfft // 2 + 1)   # EVEN nfft
+sel  = slice(0, nfft // 2 + 1)   # even nfft
 frsR = frs[sel]
 
-# ── plot: frequency domain comparison ────────────────────────────
-colors = {'Rectangular':'#378ADD', 'Hanning':'#832434', 'Triangular':'#C9A84C'}
-fig, ax = plt.subplots(figsize=(9, 5))
-for name, win in windows.items():
-    spec = windowed_spectrum_db(xdft, win, nfft)[sel]
-    ax.plot(frsR, spec, linewidth=2, label=name, color=colors[name])
+# ── plot ──────────────────────────────────────────────────────────
+fig, ax = plt.subplots(figsize=(10, 6))
+ax.plot(frsR, conv_rect[sel],   label='Rectangular', linewidth=1.5)
+ax.plot(frsR, conv_hann[sel],   label='Hanning',     linewidth=1.5)
+ax.plot(frsR, conv_triang[sel], label='Triangular',  linewidth=1.5)
 ax.set_xlabel('Frequency (Hz)')
 ax.set_ylabel('Magnitude (dB)')
-ax.set_title('Windowed spectrum — Rectangular vs Hanning vs Triangular')
+ax.set_title('Magnitude of the Power Spectrum (Circular Convolution)')
 ax.legend()
-ax.grid(True, linestyle='--', linewidth=0.4, alpha=0.5)
-ax.set_xlim([0, fs/2])
-plt.tight_layout()
-plt.show()
-
-# ── plot: windowed signals in time domain (equiv. to wvtool) ─────
-fig, axes = plt.subplots(3, 1, figsize=(9, 7), sharex=True)
-for ax2, (name, win), color in zip(axes, windows.items(), colors.values()):
-    ax2.plot(t, x1 * win, color=color, linewidth=1.5)
-    ax2.set_ylabel(name)
-    ax2.grid(True, linestyle='--', linewidth=0.4, alpha=0.4)
-axes[-1].set_xlabel('Time (s)')
-fig.suptitle('Windowed signals in time domain')
+ax.grid(True, linestyle='--', alpha=0.7)
 plt.tight_layout()
 plt.show()
 </code></pre>
@@ -326,58 +321,186 @@ plt.show()
 
 <script>
 (function(){
-  function drawWin(){
-    var N=parseInt(document.getElementById('win-N').value);
-    document.getElementById('win-N-val').textContent=N;
-    var canvas=document.getElementById('win-canvas');
-    var W=canvas.offsetWidth||680,dpr=window.devicePixelRatio||1;
-    var H=Math.min(Math.round(W*0.36),230);
-    canvas.width=W*dpr;canvas.height=H*dpr;
-    var ctx=canvas.getContext('2d');ctx.scale(dpr,dpr);
-    var w=W,h=H,pad={l:44,r:12,t:14,b:30};
-    var pw=w-pad.l-pad.r,ph=h-pad.t-pad.b;
-    var isDark=document.documentElement.getAttribute('data-theme')==='dark';
-    var bgC=isDark?'#111214':'#fafafa',gridC=isDark?'rgba(255,255,255,.06)':'rgba(0,0,0,.06)';
-    var textC=isDark?'rgba(255,255,255,.5)':'rgba(0,0,0,.5)';
-    ctx.fillStyle=bgC;ctx.fillRect(0,0,w,h);
-    function makeWin(type){var a=[];for(var i=0;i<N;i++){
-      if(type==='rect')a.push(1);
-      else if(type==='hann')a.push(0.5*(1-Math.cos(2*Math.PI*i/(N-1))));
-      else a.push(i<N/2?2*i/N:2-2*i/N);}return a;}
-    function winMag(win){var L=1024,mags=[];
-      for(var k=0;k<L/2;k++){var re=0,im=0;
-        for(var n=0;n<win.length;n++){var a=2*Math.PI*k*n/L;re+=win[n]*Math.cos(a);im-=win[n]*Math.sin(a);}
-        mags.push(Math.sqrt(re*re+im*im));}
-      var mx=Math.max.apply(null,mags);
-      return mags.map(function(v){return 20*Math.log10(v/mx+1e-12);});}
-    var wins={rect:{mag:winMag(makeWin('rect')),color:'#378ADD',label:'Rectangular'},
-              hann:{mag:winMag(makeWin('hann')),color:'#832434',label:'Hanning'},
-              bart:{mag:winMag(makeWin('bart')),color:'#C9A84C',label:'Triangular'}};
-    var YMIN=-80,YMAX=5;
-    function ly(db){return pad.t+ph*(1-(db-YMIN)/(YMAX-YMIN));}
-    function lx2(f){return pad.l+pw*(f/0.5);}
-    [-60,-40,-20,0].forEach(function(db){var gy=ly(db);
-      ctx.beginPath();ctx.moveTo(pad.l,gy);ctx.lineTo(pad.l+pw,gy);
-      ctx.strokeStyle=gridC;ctx.lineWidth=.5;ctx.stroke();
-      ctx.fillStyle=textC;ctx.font='10px sans-serif';ctx.textAlign='right';
-      ctx.fillText(db+'dB',pad.l-4,gy+3);});
-    [0,0.1,0.2,0.3,0.4,0.5].forEach(function(fv){
-      ctx.fillStyle=textC;ctx.font='10px sans-serif';ctx.textAlign='center';
-      ctx.fillText(fv.toFixed(1),lx2(fv),h-7);});
-    Object.keys(wins).forEach(function(k){var wd=wins[k];
-      ctx.beginPath();ctx.strokeStyle=wd.color;ctx.lineWidth=1.8;ctx.lineJoin='round';
-      wd.mag.forEach(function(db,i){var fx=i/1024;if(fx>0.5)return;
-        var cx=lx2(fx),cy=ly(Math.max(db,YMIN));
-        i===0?ctx.moveTo(cx,cy):ctx.lineTo(cx,cy);});ctx.stroke();});
-    var lx3=pad.l+8,ly3=pad.t+8;
-    Object.keys(wins).forEach(function(k,i){
-      ctx.fillStyle=wins[k].color;ctx.fillRect(lx3,ly3+i*16,14,3);
-      ctx.fillStyle=textC;ctx.font='11px sans-serif';ctx.textAlign='left';
-      ctx.fillText(wins[k].label,lx3+18,ly3+i*16+4);});}
-  window.drawWin=drawWin;drawWin();
-  window.addEventListener('resize',drawWin);
-  if(typeof MutationObserver!=='undefined')
-    new MutationObserver(function(){setTimeout(drawWin,30);}).observe(document.documentElement,{attributes:true});
+
+  // ── minimal FFT (Cooley-Tukey, power-of-2) ─────────────────────
+  function fft(re, im) {
+    var n = re.length;
+    if (n <= 1) return;
+    var hre = [], him = [], ore = [], oim = [];
+    for (var i = 0; i < n; i += 2) { ore.push(re[i]); oim.push(im[i]); }
+    for (var i = 1; i < n; i += 2) { hre.push(re[i]); him.push(im[i]); }
+    fft(ore, oim); fft(hre, him);
+    for (var k = 0; k < n / 2; k++) {
+      var ang = -2 * Math.PI * k / n;
+      var tr = Math.cos(ang) * hre[k] - Math.sin(ang) * him[k];
+      var ti = Math.cos(ang) * him[k] + Math.sin(ang) * hre[k];
+      re[k]         = ore[k] + tr; im[k]         = oim[k] + ti;
+      re[k + n / 2] = ore[k] - tr; im[k + n / 2] = oim[k] - ti;
+    }
+  }
+
+  // ── ifft via conjugate trick ────────────────────────────────────
+  function ifft(re, im) {
+    for (var i = 0; i < im.length; i++) im[i] = -im[i];
+    fft(re, im);
+    for (var i = 0; i < re.length; i++) { re[i] /= re.length; im[i] = -im[i] / re.length; }
+  }
+
+  // ── next power of 2 ────────────────────────────────────────────
+  function nextPow2(n) { var p = 1; while (p < n) p <<= 1; return p; }
+
+  // ── circular convolution: ifft(fft(a)*fft(b)) ─────────────────
+  function cconv(aRe, aIm, bRe, bIm) {
+    var n = aRe.length;
+    var are = aRe.slice(), aim = aIm.slice();
+    var bre = bRe.slice(), bim = bIm.slice();
+    fft(are, aim); fft(bre, bim);
+    var cre = [], cim = [];
+    for (var i = 0; i < n; i++) {
+      cre.push(are[i]*bre[i] - aim[i]*bim[i]);
+      cim.push(are[i]*bim[i] + aim[i]*bre[i]);
+    }
+    ifft(cre, cim);
+    return { re: cre, im: cim };
+  }
+
+  function computeSpectrum(N) {
+    var fs = 8, fr = 0.1, nfft = 1024;
+    var ts = 1.0 / fs;
+
+    // signal x1 = sin(2π·fr·t), length N
+    var x1 = [];
+    for (var n = 0; n < N; n++) x1.push(Math.sin(2 * Math.PI * fr * n * ts));
+
+    // zero-pad x1 to nfft for DFT
+    var xRe = x1.concat(new Array(nfft - N).fill(0));
+    var xIm = new Array(nfft).fill(0);
+    fft(xRe, xIm);  // xdft = fft(x1, nfft)
+
+    // build windows (length N), zero-pad to nfft
+    function pad(w) { return w.concat(new Array(nfft - N).fill(0)); }
+
+    var wr = new Array(N).fill(1);
+    var wh = []; for (var i=0;i<N;i++) wh.push(0.5*(1-Math.cos(2*Math.PI*i/(N-1))));
+    var wt = []; for (var i=0;i<N;i++) wt.push(1 - Math.abs((i-(N-1)/2)/((N-1)/2)));
+
+    function winSpectrum(win) {
+      var wRe = pad(win), wIm = new Array(nfft).fill(0);
+      fft(wRe, wIm);  // fft(w, nfft)
+      // circular convolution: ifft(fft(x)*fft(w))
+      var conv = cconv(xRe, xIm, wRe, wIm);
+      // magnitude in dB: 20*log10(|1/nfft * conv| + 1e-12)
+      var mags = [];
+      for (var i = 0; i <= nfft/2; i++) {
+        var re = conv.re[i] / nfft;
+        var im = conv.im[i] / nfft;
+        mags.push(20 * Math.log10(Math.sqrt(re*re + im*im) + 1e-12));
+      }
+      return mags;
+    }
+
+    var dfr  = 1.0 / (nfft * ts);
+    var freq = [];
+    for (var i = 0; i <= nfft/2; i++) freq.push(i * dfr);
+
+    return {
+      freq: freq,
+      rect:  { mag: winSpectrum(wr), color: '#1f77b4', label: 'Rectangular' },
+      hann:  { mag: winSpectrum(wh), color: isDark() ? '#C9A84C' : '#ff7f0e', label: 'Hanning'     },
+      triang:{ mag: winSpectrum(wt), color: '#2ca02c',                         label: 'Triangular'  }
+    };
+  }
+
+  function isDark() { return document.documentElement.getAttribute('data-theme') === 'dark'; }
+
+  function drawWin() {
+    var N = parseInt(document.getElementById('win-N').value);
+    document.getElementById('win-N-val').textContent = N;
+
+    var canvas = document.getElementById('win-canvas');
+    var W = canvas.offsetWidth || 680, dpr = window.devicePixelRatio || 1;
+    var H = Math.min(Math.round(W * 0.45), 320);
+    canvas.width = W * dpr; canvas.height = H * dpr;
+    var ctx = canvas.getContext('2d'); ctx.scale(dpr, dpr);
+    var w = W, h = H, pad = { l: 52, r: 16, t: 20, b: 40 };
+    var pw = w - pad.l - pad.r, ph = h - pad.t - pad.b;
+
+    var dark = isDark();
+    var bgC   = dark ? '#111214' : '#ffffff';
+    var gridC = dark ? 'rgba(255,255,255,.07)' : 'rgba(0,0,0,.07)';
+    var textC = dark ? 'rgba(255,255,255,.5)'  : 'rgba(0,0,0,.5)';
+
+    ctx.fillStyle = bgC; ctx.fillRect(0, 0, w, h);
+
+    var YMIN = -140, YMAX = 60, FMAX = 4; // fs/2 = 4 Hz
+
+    function lx(f)  { return pad.l + pw * (f / FMAX); }
+    function ly(db) { return pad.t + ph * (1 - (db - YMIN) / (YMAX - YMIN)); }
+
+    // y grid
+    ctx.setLineDash([3, 3]);
+    [-120, -100, -80, -60, -40, -20, 0, 20, 40].forEach(function(db) {
+      var gy = ly(db);
+      ctx.beginPath(); ctx.moveTo(pad.l, gy); ctx.lineTo(pad.l + pw, gy);
+      ctx.strokeStyle = gridC; ctx.lineWidth = 0.6; ctx.stroke();
+      ctx.setLineDash([]);
+      ctx.fillStyle = textC; ctx.font = '10px sans-serif'; ctx.textAlign = 'right';
+      ctx.fillText(db + ' dB', pad.l - 6, gy + 3);
+      ctx.setLineDash([3, 3]);
+    });
+    ctx.setLineDash([]);
+
+    // x grid + labels
+    [0, 1, 2, 3, 4].forEach(function(f) {
+      var gx = lx(f);
+      ctx.beginPath(); ctx.moveTo(gx, pad.t); ctx.lineTo(gx, pad.t + ph);
+      ctx.strokeStyle = gridC; ctx.lineWidth = 0.5; ctx.setLineDash([3,3]); ctx.stroke(); ctx.setLineDash([]);
+      ctx.fillStyle = textC; ctx.font = '10px sans-serif'; ctx.textAlign = 'center';
+      ctx.fillText(f + ' Hz', gx, h - pad.b + 14);
+    });
+
+    // axis labels
+    var labelC = dark ? '#C9A84C' : '#832434';
+    ctx.fillStyle = labelC; ctx.font = 'bold 12px serif'; ctx.textAlign = 'center';
+    ctx.fillText('Frequency (Hz)', pad.l + pw / 2, h - 4);
+    ctx.save();
+    ctx.translate(13, pad.t + ph / 2); ctx.rotate(-Math.PI / 2);
+    ctx.fillStyle = labelC; ctx.font = 'bold 12px serif'; ctx.textAlign = 'center';
+    ctx.fillText('Magnitude (dB)', 0, 0);
+    ctx.restore();
+
+    // border
+    ctx.strokeStyle = dark ? 'rgba(255,255,255,.15)' : 'rgba(0,0,0,.15)';
+    ctx.lineWidth = 1; ctx.strokeRect(pad.l, pad.t, pw, ph);
+
+    // compute & draw spectra
+    var data = computeSpectrum(N);
+    ['rect', 'hann', 'triang'].forEach(function(k) {
+      var d = data[k];
+      ctx.beginPath(); ctx.strokeStyle = d.color; ctx.lineWidth = 1.8; ctx.lineJoin = 'round';
+      data.freq.forEach(function(f, i) {
+        var cx = lx(f), cy = ly(Math.max(d.mag[i], YMIN));
+        i === 0 ? ctx.moveTo(cx, cy) : ctx.lineTo(cx, cy);
+      });
+      ctx.stroke();
+    });
+
+    // legend
+    var lxL = pad.l + pw - 110, lyL = pad.t + 8;
+    ['rect', 'hann', 'triang'].forEach(function(k, i) {
+      var d = data[k];
+      ctx.fillStyle = d.color; ctx.fillRect(lxL, lyL + i * 18, 14, 3);
+      ctx.fillStyle = textC; ctx.font = '11px sans-serif'; ctx.textAlign = 'left';
+      ctx.fillText(d.label, lxL + 18, lyL + i * 18 + 4);
+    });
+  }
+
+  window.drawWin = drawWin;
+  drawWin();
+  window.addEventListener('resize', drawWin);
+  if (typeof MutationObserver !== 'undefined')
+    new MutationObserver(function() { setTimeout(drawWin, 30); })
+      .observe(document.documentElement, { attributes: true });
 })();
 </script>
 
