@@ -10,7 +10,7 @@ permalink: /cv/
   <svg width="13" height="13" viewBox="0 0 16 16" fill="none">
     <path d="M4 1h6l4 4v10H4V1z" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linejoin="round"/>
     <path d="M10 1v4h4" stroke="currentColor" stroke-width="1.2" fill="none"/>
-    <path d="M6 9h4M6 11.5h3" stroke="#832434" stroke-width="1.3" stroke-linecap="round"/>
+    <path d="M6 9h4M6 11.5h3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
   </svg>
   Download full PDF
 </a>

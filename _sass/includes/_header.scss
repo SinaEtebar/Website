@@ -1,13 +1,14 @@
+// ═══════════════════════════════════════════════
+// Site header — slim single bar (PaperMod style)
+// Name + toggle on the left · nav links on the right
+// ═══════════════════════════════════════════════
+
 .site-header {
-  @extend %padding-small;
   background: var(--header-bg);
-  border-bottom: 1px solid var(--border-color);
-  display: inline-block;
-  float: left;
-  width: 100%;
   position: sticky;
   top: 0;
   z-index: 100;
+  // no border-bottom — the hero breathes right under it
 
   a {
     color: var(--header-link);
@@ -17,50 +18,67 @@
   }
 }
 
-// Top row: avatar + title + toggle
-.header-top {
+.header-inner {
+  max-width: 52em;
+  margin: 0 auto;
+  padding: 1em 1.2em;
   display: flex;
   align-items: center;
-  gap: 0.75em;
-  margin-bottom: 0.3em;
+  justify-content: space-between;
+  gap: 1em;
+  flex-wrap: wrap;
 }
 
-.branding {
-  flex-shrink: 0;
-  .avatar {
-    height: 4em;
-    width: 4em;
-    display: block;
-    border-radius: 0.2em;
-  }
-}
-
-// Title + toggle side by side
-.header-title-row {
+// ── Brand: name + toggle together ──────────────
+.header-brand {
   display: flex;
   align-items: center;
-  gap: 0.5em;
+  gap: 0.45em;
 }
 
 .site-title {
-  font-weight: bold;
-  font-size: 1em;
-  line-height: 1.5;
-  margin: 0;
-  a {
-    color: var(--header-link);
+  font-weight: 700;
+  font-size: 1.4em;
+  line-height: 1.3;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+// ── Nav ────────────────────────────────────────
+.site-nav {
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.2em 0.3em;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    display: flex;
+    align-items: center;
+  }
+  .page-link {
+    padding: 3px 0.55em;
+    font-size: 0.95em;
+    border-radius: 4px;
+
+    &:hover {
+      background: var(--border-color);
+    }
   }
 }
 
-// Toggle button (sun/moon icons next to name)
+// ── Theme toggle (same behavior as before) ─────
 .theme-toggle {
   display: inline-flex;
   align-items: center;
   cursor: pointer;
-  padding: 3px;
+  padding: 4px;
   border-radius: 4px;
   color: var(--text-color);
-  opacity: 0.65;
+  opacity: 0.55;
   transition: opacity 0.2s, color 0.2s;
 
   &:hover {
@@ -76,8 +94,8 @@
     }
   }
 
-  // In light mode: show moon (click to go dark)
-  // In dark mode: show sun (click to go light)
+  // Light mode: show moon (click to go dark)
+  // Dark mode: show sun (click to go light)
   .toggle-sun { display: none; }
   .toggle-moon { display: flex; }
 }
@@ -87,55 +105,19 @@
   .toggle-moon { display: none; }
 }
 
-// Nav row
-.site-nav {
-  ul {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 0.1em 0.1em;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+// ── Mobile ─────────────────────────────────────
+@media (max-width: 600px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4em;
+    padding: 0.7em 1em;
   }
-  li {
-    display: flex;
-    align-items: center;
+  .site-title {
+    font-size: 1.25em;
   }
-  .page-link {
-    padding: 2px 0.4em;
-    font-size: 0.95em;
-  }
-}
-
-// Social icons row
-.social-icons {
-  display: inline-flex;
-  align-items: center;
-  gap: 0;
-  margin-left: 0.3em;
-
-  .social-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    color: var(--header-link);
-    opacity: 0.6;
-    transition: opacity 0.2s, color 0.2s, background 0.2s;
-    text-decoration: none;
-
-    &:hover {
-      opacity: 1;
-      color: var(--link-color);
-      background: var(--border-color);
-    }
-
-    svg {
-      display: block;
-      flex-shrink: 0;
-    }
+  .site-nav .page-link {
+    padding: 3px 0.45em;
+    font-size: 0.9em;
   }
 }

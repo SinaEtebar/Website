@@ -1,0 +1,161 @@
+# Photography gallery data.
+#
+# Each entry is a "folder" (a group of photos with a shared caption).
+# A folder holds "boxes"; a box is one cell of the grid and is either
+#   layout: landscape  -> one photo, displayed 150x100 css px
+#   layout: portrait   -> two photos side by side, each 73 css px wide
+#
+# Per photo:
+#   file    basename in assets/img/photography (no extension)
+#   w, h    intrinsic size of the 1x thumbnail, used for width/height attrs
+#   title   caption shown in the lightbox
+#   alt     description of the image for screen readers and when images fail
+#
+# Derivatives (thumb/*@1x|2x|3x.avif|webp|jpg and large/*.jpg|avif) are
+# generated from the originals by tools/build-images.js — re-run it after
+# adding a photo here.
+
+- caption: "Italy 2025-2026"
+  boxes:
+    - layout: landscape
+      photos:
+        - file: "20260322"
+          w: 157
+          h: 100
+          title: "Spanish Steps, Rome. Italy 2026."
+          alt: "A crowd with umbrellas on a wet street below rows of ochre buildings."
+    - layout: portrait
+      photos:
+        - file: "20251102"
+          w: 73
+          h: 109
+          title: "Spanish Steps, Rome. Italy 2026."
+          alt: "Rome rooftops and terraces stepping back towards a distant dome."
+        - file: "20251118"
+          w: 73
+          h: 99
+          title: "Spanish Steps, Rome. Italy 2026."
+          alt: "The Spanish Steps at night, lamplight leading up to the twin bell towers of Trinità dei Monti."
+    - layout: portrait
+      photos:
+        - file: "20251005"
+          w: 73
+          h: 110
+          title: "Colosseum, Rome. Italy 2026."
+          alt: "The Colosseum framed by the trunk and canopy of an umbrella pine."
+        - file: "202510261"
+          w: 73
+          h: 99
+          title: "Colosseum, Rome. Italy 2026."
+          alt: "Pedestrians on a zebra crossing in front of the Colosseum under a cloudy sky."
+    - layout: portrait
+      photos:
+        - file: "20251026"
+          w: 73
+          h: 106
+          title: "Colosseum, Rome. Italy 2026."
+          alt: "A bronze statue of a Roman emperor raised above the ruins of the Imperial Forums."
+        - file: "20251227"
+          w: 73
+          h: 97
+          title: "Vatican, Rome. Italy 2026."
+          alt: "A Christmas tree lit in blue in front of the façade and dome of St Peter's Basilica at dusk."
+    - layout: landscape
+      photos:
+        - file: "20260414"
+          w: 149
+          h: 100
+          title: "Sapienza University, Rome. Italy 2026."
+          alt: "A pale travertine façade with square columns and a carved inscription under a cloudy sky."
+
+- caption: "Iran 2017-2019"
+  boxes:
+    - layout: landscape
+      photos:
+        - file: "20190802"
+          w: 178
+          h: 100
+          title: "Rudbar, Gilan. Iran 2019."
+          alt: "A wide river winding between bare hills, with a village on the far bank."
+    - layout: landscape
+      photos:
+        - file: "20191002"
+          w: 178
+          h: 100
+          title: "Isfahan. Iran 2018."
+          alt: "A misty river running past a line of trees, seen from beside a brick wall."
+    - layout: landscape
+      photos:
+        - file: "20180718"
+          w: 156
+          h: 100
+          title: "Home. Iran 2018."
+          alt: "Slender birch branches lit against a black night sky."
+    - layout: landscape
+      photos:
+        - file: "20180519"
+          w: 150
+          h: 100
+          title: "IUT Central Library. Iran 2018."
+          alt: "A marble colonnade opening onto a mountain ridge, its polished floor reflecting the sky."
+    - layout: landscape
+      photos:
+        - file: "20180810"
+          w: 172
+          h: 100
+          title: "Ramsar. Iran 2018."
+          alt: "A green coastal plain and scattered rooftops meeting a hazy sea."
+    - layout: portrait
+      photos:
+        - file: "20180325"
+          w: 73
+          h: 97
+          title: "Spring. Iran 2018."
+          alt: "Close-up of white almond blossom on a bare branch against a pale sky."
+        - file: "20180704"
+          w: 73
+          h: 97
+          title: "Tabriz. Iran 2018."
+          alt: "A shaded street lined with trees, shopfronts and parked bicycles."
+    - layout: landscape
+      photos:
+        - file: "20180510"
+          w: 166
+          h: 100
+          title: "Tehran. Iran 2018."
+          alt: "A footbridge outlined in shifting rainbow lights above a dark park at dusk."
+    - layout: landscape
+      photos:
+        - file: "20180621"
+          w: 145
+          h: 100
+          title: "Isfahan. Iran 2018."
+          alt: "A long brick arcade of pointed arches receding into the distance."
+    - layout: landscape
+      photos:
+        - file: "20190604"
+          w: 178
+          h: 100
+          title: "Isfahan. Iran 2019."
+          alt: "An illuminated arched bridge mirrored in still water at dusk."
+    - layout: landscape
+      photos:
+        - file: "20180308"
+          w: 161
+          h: 100
+          title: "IUT. Iran 2018."
+          alt: "An empty curved road running between clipped hedges and tall cypress trees."
+    - layout: landscape
+      photos:
+        - file: "20180317"
+          w: 158
+          h: 100
+          title: "Spring. Iran 2018."
+          alt: "A grove of blossoming trees over green grass in early spring."
+    - layout: landscape
+      photos:
+        - file: "20240719"
+          w: 218
+          h: 100
+          title: "Spring. Iran 2019."
+          alt: "A wide band of thin cloud drawn across a pale sky at dusk."

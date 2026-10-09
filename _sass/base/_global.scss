@@ -99,47 +99,4 @@ iframe, img, embed, object, video {
 img[align=left] { margin-right: 3%; }
 img[align=right] { margin-left: 3%; }
 
-.site-header {
-  @extend %padding-small;
-  background: var(--header-bg);
-  border-bottom: 1px solid var(--border-color);
-  display: inline-block;
-  float: left;
-  width: 100%;
 
-  a {
-    color: var(--header-link);
-  }
-  a:hover {
-    color: var(--link-color);
-  }
-  .avatar {
-    height: 4em;
-    width: 4em;
-    float: left;
-    margin-top: -3px;
-    border-radius: 0.2em;
-    margin-right: 1em;
-  }
-  .site-title {
-    display: block;
-    font-weight: bold;
-    font-size: 1em;
-    line-height: 1.5;
-  }
-  .site-nav {  
-    margin-top: 4px;
-    ul {
-      display: block;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      line-height: 1.5;
-      text-align: left;
-    }
-    li {
-      display: inline;
-      margin-right: 0.4em;
-    }
-  }
-}

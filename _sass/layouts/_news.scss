@@ -1,0 +1,82 @@
+// ═══════════════════════════════════════════════
+// News feed — dated one-liners with category tags
+// Used on the homepage (Recent news) and /news/
+// ═══════════════════════════════════════════════
+
+.news-page {
+  max-width: 44em;
+  margin: 0 auto;
+  padding: 0 1em 3em;
+}
+
+.news-list {
+  list-style: none;
+  margin: 1.5em 0 0;
+  padding: 0;
+}
+
+.news-item {
+  display: flex;
+  align-items: baseline;
+  gap: 0.8em;
+  padding: 0.55em 0;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 0.95em;
+  line-height: 1.55;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  @media (max-width: 600px) {
+    flex-wrap: wrap;
+    gap: 0.5em;
+  }
+}
+
+.news-date {
+  flex-shrink: 0;
+  width: 6.8em;
+  font-size: 0.82em;
+  color: var(--footer-text);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.news-text {
+  flex: 1;
+  min-width: 12em;
+  color: var(--text-color);
+
+  a {
+    color: var(--link-color);
+    font-weight: 600;
+  }
+}
+
+// ── Tag pills ──────────────────────────────────
+.news-tag {
+  flex-shrink: 0;
+  font-size: 0.68em;
+  text-transform: lowercase;
+  letter-spacing: 0.04em;
+  padding: 0.15em 0.85em;
+  border-radius: 1em;
+  // fallback look for tags without a specific color below
+  background: rgba(128, 128, 128, 0.15);
+  color: var(--footer-text);
+}
+
+// crimson family — physics & hacking
+.news-tag--physics,
+.news-tag--hack {
+  background: rgba(131, 36, 52, 0.14);
+  color: var(--link-color);
+}
+
+// gold family — posts & photos
+.news-tag--post,
+.news-tag--photo {
+  background: rgba(201, 168, 76, 0.18);
+  color: #a4842f;
+}

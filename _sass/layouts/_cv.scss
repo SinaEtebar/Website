@@ -1,8 +1,6 @@
 // ── CV page ────────────────────────────────────────────────
-$cv-accent:   #832434;
-$cv-line:     rgba(0,0,0,.10);
-$cv-muted:    #767676;
-$cv-bg-tag:   #f3f3f3;
+// Colours come from the theme's CSS variables so the page follows the
+// dark/light toggle; only the geometry stays in SCSS variables.
 $cv-date-w:   9em;
 $cv-spine-w:  1.8em;
 
@@ -16,19 +14,19 @@ $cv-spine-w:  1.8em;
   display: inline-flex;
   align-items: center;
   gap: .45em;
-  font-size: .82em;
-  font-weight: 500;
-  padding: .5em 1.1em;
-  border: none;
-  border-radius: 6px;
-  background: #2a2a2a;
-  color: #fff;
+  font-size: .85em;
+  font-weight: 600;
+  padding: .4em 1.2em;
+  border: 1px solid var(--link-color);
+  border-radius: 2em;
+  background: none;
+  color: var(--link-color);
   text-decoration: none;
   margin: 0 0 2.2em calc(#{$cv-date-w} + #{$cv-spine-w});
-  transition: background .15s;
+  transition: background .2s, color .2s;
   &:hover {
-    background: $cv-accent;
-    color: #fff;
+    background: var(--link-color);
+    color: var(--bg-color);
     text-decoration: none;
   }
   svg { flex-shrink: 0; }
@@ -42,10 +40,10 @@ $cv-spine-w:  1.8em;
   font-weight: 600;
   letter-spacing: .09em;
   text-transform: uppercase;
-  color: $cv-muted;
+  color: var(--footer-text);
   margin: 0 0 1.1em calc(#{$cv-date-w} + #{$cv-spine-w});
   padding-bottom: .35em;
-  border-bottom: 1px solid $cv-line;
+  border-bottom: 1px solid var(--border-color);
 }
 
 // ── Content-aligned wrapper (for languages, personal, etc.)
@@ -64,7 +62,7 @@ $cv-spine-w:  1.8em;
   width: $cv-date-w;
   flex-shrink: 0;
   font-size: .75em;
-  color: $cv-muted;
+  color: var(--footer-text);
   text-align: right;
   padding-right: 1em;
   padding-top: .22em;
@@ -84,8 +82,8 @@ $cv-spine-w:  1.8em;
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: #fff;
-  border: 2px solid $cv-accent;
+  background: var(--bg-color);
+  border: 2px solid var(--link-color);
   flex-shrink: 0;
   margin-top: .22em;
   z-index: 1;
@@ -93,7 +91,7 @@ $cv-spine-w:  1.8em;
 
 .cv-line-seg {
   width: 1.5px;
-  background: $cv-line;
+  background: var(--border-color);
   flex: 1;
   min-height: 1.8em;
 }
@@ -118,22 +116,22 @@ $cv-spine-w:  1.8em;
 .cv-title {
   font-size: .96em;
   font-weight: 600;
-  color: $text-color;
+  color: var(--text-color);
   margin: 0 0 .1em;
   line-height: 1.35;
 }
 
 .cv-org {
   font-size: .84em;
-  color: $cv-muted;
+  color: var(--footer-text);
   margin: 0 0 .25em;
   line-height: 1.4;
-  a { color: $cv-accent; }
+  a { color: var(--link-color); }
 }
 
 .cv-thesis {
   font-size: .82em;
-  color: $cv-muted;
+  color: var(--footer-text);
   font-style: italic;
   margin: .2em 0 0;
   line-height: 1.45;
@@ -151,9 +149,9 @@ $cv-spine-w:  1.8em;
   font-size: .74em;
   padding: .15em .6em;
   border-radius: 4px;
-  background: $cv-bg-tag;
-  color: $cv-muted;
-  border: 1px solid $border-color;
+  background: rgba(128, 128, 128, 0.15);
+  color: var(--footer-text);
+  border: 1px solid var(--border-color);
 }
 
 // ── Collapsible details
@@ -162,7 +160,7 @@ $cv-spine-w:  1.8em;
   align-items: center;
   gap: .3em;
   font-size: .78em;
-  color: $cv-accent;
+  color: var(--link-color);
   cursor: pointer;
   background: none;
   border: none;
@@ -185,9 +183,9 @@ $cv-spine-w:  1.8em;
   display: none;
   margin-top: .6em;
   font-size: .84em;
-  color: $cv-muted;
+  color: var(--footer-text);
   line-height: 1.6;
-  border-left: 2px solid $cv-line;
+  border-left: 2px solid var(--border-color);
   padding-left: .85em;
   &.open { display: block; }
   ul {
@@ -206,32 +204,32 @@ $cv-spine-w:  1.8em;
 }
 
 .cv-lang-card {
-  border: 1px solid $border-color;
+  border: 1px solid var(--border-color);
   border-radius: 8px;
   padding: .7em .85em .65em;
-  background: #fff;
+  background: none;
 }
 
 .cv-lang-name {
   font-size: .86em;
   font-weight: 600;
-  color: $text-color;
+  color: var(--text-color);
   margin: 0 0 .12em;
 }
 
 .cv-lang-level {
   font-size: .74em;
-  color: $cv-muted;
+  color: var(--footer-text);
   margin: 0 0 .45em;
 }
 
-.cv-lang-bar { height: 3px; border-radius: 2px; background: $cv-line; }
-.cv-lang-fill { height: 3px; border-radius: 2px; background: $cv-accent; }
+.cv-lang-bar { height: 3px; border-radius: 2px; background: var(--border-color); }
+.cv-lang-fill { height: 3px; border-radius: 2px; background: var(--link-color); }
 
 // ── Personal
 .cv-personal {
   font-size: .86em;
-  color: $cv-muted;
+  color: var(--footer-text);
   margin-top: .4em;
   table {
     margin: 0;
@@ -240,7 +238,7 @@ $cv-spine-w:  1.8em;
       border: none;
       padding: .15em .8em .15em 0;
       font-size: 1em;
-      &:first-child { color: $cv-muted; width: 9em; }
+      &:first-child { color: var(--footer-text); width: 9em; }
     }
     tr:hover { border: none; }
   }

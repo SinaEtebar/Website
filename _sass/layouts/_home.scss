@@ -1,0 +1,161 @@
+// ═══════════════════════════════════════════════
+// Homepage — PaperMod-style hero + Recent news
+// Wired to the theme's CSS variables, so the
+// dark/light toggle works with no extra rules.
+// ═══════════════════════════════════════════════
+
+.home {
+  max-width: 44em;
+  margin: 0 auto;
+  padding: 3.5em 1.2em 4em;
+}
+
+// ── Hero ───────────────────────────────────────
+.home-hero {
+  text-align: center;
+  padding-bottom: 1em;
+}
+
+.home-avatar img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--accent-gold, #C9A84C);
+  padding: 4px;
+  background: var(--bg-color);
+
+  @media (max-width: 600px) {
+    width: 130px;
+    height: 130px;
+  }
+}
+
+.home-greeting {
+  font-size: 2.4em;
+  font-weight: 400;
+  margin: 0.5em 0 0.35em;
+  letter-spacing: -0.01em;
+
+  @media (max-width: 600px) {
+    font-size: 1.9em;
+  }
+}
+
+// Social icons: reuse the theme's .falist / .social-icon-about
+// styles — just tighten the spacing under the greeting.
+.home-hero .falist > ul {
+  margin-top: 0.2em;
+  margin-bottom: 0.4em;
+}
+
+// ── Intro ──────────────────────────────────────
+.home-intro {
+  max-width: 36em;
+  margin: 0 auto;
+  font-size: 1.05em;
+  line-height: 1.65;
+
+  p {
+    margin: 0 0 0.8em;
+  }
+
+  a {
+    color: var(--link-color);
+    font-weight: 600;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.home-blog-hint {
+  font-size: 0.8em;
+  color: var(--footer-text);
+  margin-top: 1.5em;
+
+  a {
+    color: var(--link-color);
+  }
+}
+
+// ── At a glance ────────────────────────────────
+.home-facts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.8em;
+  margin: 2.6em 0 2.8em;
+  padding: 1.6em 0;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  text-align: left;
+
+  @media (max-width: 620px) {
+    grid-template-columns: 1fr;
+    gap: 1.3em;
+  }
+}
+
+.fact-label {
+  margin-bottom: 0.45em;
+  font-size: 0.7em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--footer-text);
+}
+
+.fact-value {
+  font-size: 0.92em;
+  line-height: 1.5;
+}
+
+// ── Recent news section ────────────────────────
+.home-news {
+  margin-top: 2.5em;
+}
+
+.home-news-title {
+  font-size: 1.5em;
+  font-weight: 400;
+  margin-bottom: 0.6em;
+  padding-bottom: 0.35em;
+  border-bottom: 1px solid var(--border-color);
+}
+
+// the list itself is styled by _news.scss (Step 2)
+
+// ── Button component ───────────────────────────
+// Outlined; fills with the accent colour on hover.
+.button {
+  display: inline-block;
+  padding: 0.4em 1.6em;
+  border: 1px solid var(--link-color);
+  border-radius: 2em;
+  color: var(--link-color);
+  font-size: 0.9em;
+  font-weight: 600;
+  transition: background 0.2s, color 0.2s;
+
+  &:hover {
+    background: var(--link-color);
+    color: var(--bg-color, #fff);
+    text-decoration: none;
+  }
+}
+
+
+// The two doors: research first, CV second.
+.home-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.7em;
+  margin: 1.6em 0 0;
+}
+
+.more-news {
+  text-align: center;
+  margin-top: 1.4em;
+}

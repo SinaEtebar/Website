@@ -1,81 +1,81 @@
 /* AUDIENCE SETTINGS */
 /* ================= */
+/* Two outlined pills, the same shape as the "More news" button and the
+   project link row; the selected audience is filled in.
+   Class names are set by assets/js/toggle_audience.js — style only
+   .active / .inactive, since the script does not apply
+   .beginner / .expert consistently. */
 
-.audience-button-container{
-    margin-bottom: 0.5em;
+.audience-button-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.45em;
+    margin: 0.5em 0 1.2em;
+    font-size: 0.85em;
+    color: var(--footer-text);
 }
 
-.audience-button{
-    position: relative;
-    border: 1px solid;
-    padding: 5px 0px; /*32*/
+.audience-button-container::before {
+    content: "Audience:";
+    letter-spacing: 0.03em;
+}
+
+.audience-button {
+    position: relative; /* anchor for the tooltip */
+    display: inline-block;
+    width: auto;
+    margin: 0;
+    padding: 0.28em 1.1em;
+    border: 1px solid var(--link-color);
+    border-radius: 2em;
+    font-size: inherit;
+    font-weight: 600;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 0px;/*2 px*/
-    width: 150px;
+    transition: background 0.2s, color 0.2s;
 }
 
-
 .audience-button.active {
-    color: white;
-    border-color: $link-color;
-    background-color: $link-color;
+    background: var(--link-color);
+    color: var(--bg-color);
     cursor: default;
 }
 
 .audience-button.active:hover {
-    /* clear highlight set before*/
     text-decoration: none;
 }
 
-.audience-button.inactive{
-    color: $link-color;
-    border-color: $link-color;
-    background-color: white;
+.audience-button.inactive {
+    background: none;
+    color: var(--link-color);
     cursor: pointer;
 }
 
-.audience-button.inactive:hover{
-    /* clear highlight set before*/
+.audience-button.inactive:hover {
+    background: var(--link-color);
+    color: var(--bg-color);
     text-decoration: none;
-    color: darken($link-color, 15%);
-    border-color: darken($link-color, 15%);
 }
 
-.audience-button.inactive{
-    color: $link-color;
-    border-color: $link-color;
-    background-color: #D3D3D3;
-}
-
-.audience-button .tooltiptext{
+/* Tooltip explaining what each mode means */
+.audience-button .tooltiptext {
     visibility: hidden;
-    width: 200px;
-    background-color: black;
-    color: #D3D3D3;
-    text-align: center;
-    padding: 7px 20px;
-    border-radius: 6px;
-}
-
-.audience-button.beginner .tooltiptext{
-    /* Position the tooltip text - see examples below! */
     position: absolute;
-    z-index: 1;
-    top: -5px;
-    right: 105%; 
+    z-index: 2;
+    top: 2.2em;
+    left: 0;
+    width: 210px;
+    padding: 0.5em 0.7em;
+    border-radius: 4px;
+    background: var(--text-color);
+    color: var(--bg-color);
+    font-size: 0.95em;
+    font-weight: 400;
+    line-height: 1.35;
+    text-align: left;
 }
 
-.audience-button.expert .tooltiptext{
-    /* Position the tooltip text - see examples below! */
-    position: absolute;
-    z-index: 1;
-    top: -5px;
-    left: 105%; 
-}
-
-.audience-button.inactive:hover .tooltiptext {
+.audience-button:hover .tooltiptext {
     visibility: visible;
 }

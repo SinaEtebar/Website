@@ -1,0 +1,34 @@
+# ═══════════════════════════════════════════════════════════
+# Your news feed. Adding an update = adding 3 lines here.
+#
+#   - date: 2026-07-05        (YYYY-MM-DD — used for sorting)
+#     tag: physics            (physics / hack / post / photo — or leave out)
+#     text: "What happened. Markdown [links](https://...) work."
+#
+# Order in this file doesn't matter — entries are sorted by date
+# automatically, newest first.
+# ═══════════════════════════════════════════════════════════
+
+- date: 2026-08-27
+  tag: post
+  text: "Published my typed notes for [Theory of Fundamental Interactions](/2026/08/27/TFI.html): thirty-two lectures from the Poincaré group to the electroweak sector."
+
+- date: 2026-08-26
+  tag: physics
+  text: "Added the [SLYT experiment report](/research/#msc-SLYT) to the research page: characterising a 64-channel LYSO scintillator and telling real signals apart from the crystal's own radioactivity."
+
+- date: 2026-08-26
+  tag: physics
+  text: "Added my [Geant4 Bragg peak simulation](/research/#msc-Geant4) to the research page: 100 MeV protons in water, and how much the choice of physics list really matters."
+
+- date: 2026-05-03
+  tag: post
+  text: "New blog post: [Dalitz Plots — Reading the Matrix Element from a Scatter Plot](/2026/05/03/Dalitz.html), with interactive plots."
+
+- date: 2026-03-28
+  tag: physics
+  text: "Published my [Particle Physics lecture notes](/2026/03/28/PP.html) from Prof. Rahatlou's MSc course at Sapienza."
+
+- date: 2025-04-17
+  tag: post
+  text: "New blog post: [Spectral Analysis — from periodograms to Welch's method](/2025/04/17/SpectralAnalysis.html), with live canvas demos."

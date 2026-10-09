@@ -1,0 +1,20 @@
+// Self-hosted Spectral (headings + wordmark).
+// Served from our own origin rather than fonts.gstatic.com: one fewer
+// third-party connection per page, and no render-blocking round trip.
+// Files come from the @fontsource/spectral package (latin subset).
+
+@font-face {
+  font-family: 'Spectral';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/assets/fonts/spectral-latin-400-normal.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Spectral';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/assets/fonts/spectral-latin-700-normal.woff2') format('woff2');
+}

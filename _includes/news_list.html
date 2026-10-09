@@ -1,0 +1,23 @@
+{% comment %}
+  Renders the news feed from _data/news.yml, newest first.
+  Usage:
+    {% include news_list.html %}            → all entries (archive page)
+    {% include news_list.html limit=6 %}    → latest 6 (homepage)
+{% endcomment %}
+
+{% assign news_items = site.data.news | sort: "date" | reverse %}
+{% if include.limit %}
+  {% assign news_items = news_items | slice: 0, include.limit %}
+{% endif %}
+
+<ul class="news-list">
+  {% for item in news_items %}
+  <li class="news-item">
+    <span class="news-date">{{ item.date | date: "%b %-d, %Y" }}</span>
+    {% if item.tag %}
+    <span class="news-tag news-tag--{{ item.tag }}">{{ item.tag }}</span>
+    {% endif %}
+    <span class="news-text">{{ item.text | markdownify | remove: '<p>' | remove: '</p>' }}</span>
+  </li>
+  {% endfor %}
+</ul>

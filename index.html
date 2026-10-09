@@ -3,59 +3,100 @@ layout: default
 title: About me
 ---
 <div class="content">
-<article>
-<header style="background-image: url('/')">
-<h1 class="title">About me</h1>
-</header>
-<section class="post-content">
-	<div class="mepage">
-	  <p>
-		I'm a Particle Physics student at <a href="https://www.uniroma1.it/en">Sapienza University of Rome</a>, working on <a href="https://en.wikipedia.org/wiki/Neutrino">neutrino physics</a> and detecting <a href="https://en.wikipedia.org/wiki/Dark_matter">dark matter</a>. 
-	  </p>
-	  <p>I am also a hacker working on <a href="https://en.wikipedia.org/wiki/Bug_bounty_program">Bug Bounty programs</a> in my free time.</p>
-	  <p>Apart from that, I'm enthusiastic about maths, history, Learning languages, traveling and <a href="/photography/">photography</a>.</p>
+<div class="home">
 
-<div class="bigphotobox">
-  <img alt="my picture" src="/assets/img/index/memain.png" style="border-radius: 50%" />
+  <!-- ── Hero: avatar · greeting · socials · intro ── -->
+  <section class="home-hero">
+
+    <div class="home-avatar">
+      <img alt="Portrait of Sina Etebar" src="/assets/img/index/memain.png" />
+    </div>
+<h1 class="home-greeting">Hi, I'm Sina&nbsp;👋</h1>
+
+    <div class="falist">
+      <ul>
+        <li>
+          <a href="{{ site.theme_settings.email_mailhide }}" target="_blank" rel="noopener" title="Email" class="social-icon-about">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/{{ site.theme_settings.github }}" title="GitHub" class="social-icon-about">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href="{{ site.theme_settings.linkedin }}" title="LinkedIn" class="social-icon-about">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://twitter.com/{{ site.theme_settings.twitter }}" title="Twitter / X" class="social-icon-about">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.259 5.632L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href="{{ site.theme_settings.bluesky }}" title="Bluesky" class="social-icon-about">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 600 530" fill="none" stroke="currentColor" stroke-width="40"><path d="M135.72 44.03C202.216 93.951 273.74 195.17 300 249.49c26.262-54.316 97.782-155.54 164.28-205.46C512.26 8.009 590-19.862 590 68.825c0 17.712-10.155 148.79-16.111 170.07-20.703 73.984-96.144 92.854-163.25 81.433 117.3 19.964 147.14 86.092 82.697 152.22-122.39 125.59-175.91-31.511-189.63-71.766-2.514-7.38-3.69-10.832-3.708-7.896-.017-2.936-1.193.516-3.707 7.896-13.714 40.255-67.233 197.36-189.63 71.766-64.444-66.128-34.605-132.26 82.697-152.22-67.108 11.421-142.55-7.449-163.25-81.433C20.15 217.613 10 86.532 10 68.825c0-88.687 77.742-60.816 125.72-24.795z"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href="{{ site.theme_settings.rss }}" title="RSS" class="social-icon-about">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="home-intro">
+      <p>
+        I'm a Particle Physics MSc student at <a href="https://www.uniroma1.it/en">Sapienza University of Rome</a>,
+        working on <a href="https://en.wikipedia.org/wiki/Neutrino">neutrino physics</a> and detecting
+        <a href="https://en.wikipedia.org/wiki/Dark_matter">dark matter</a>.
+      </p>
+      <p>
+        I'm also a hacker working on <a href="https://en.wikipedia.org/wiki/Bug_bounty_program">bug bounty programs</a>
+        in my free time — and enthusiastic about maths, history, learning languages, traveling and
+        <a href="/photography/">photography</a>.
+      </p>
+    </div>
+
+    <div class="home-actions">
+      <a class="button" href="/research/">Explore research</a>
+      <a class="button" href="/assets/pdf/cv.pdf">Download CV</a>
+    </div>
+
+      <p class="home-blog-hint">
+        Short updates below · long-form writing on the <a href="/blog/">blog</a>.
+      </p>
+  </section>
+
+  <!-- ── At a glance ── -->
+  <section class="home-facts">
+    <div class="fact">
+      <div class="fact-label">Currently</div>
+      <div class="fact-value">MSc student in Physics<br>Sapienza University of Rome</div>
+    </div>
+    <div class="fact">
+      <div class="fact-label">Interests</div>
+      <div class="fact-value">Neutrino physics&nbsp;&middot; Dark matter&nbsp;&middot; Bug bounty</div>
+    </div>
+    <div class="fact">
+      <div class="fact-label">Based in</div>
+      <div class="fact-value">Rome, Italy</div>
+    </div>
+  </section>
+
+  <!-- ── Recent news (from _data/news.yml) ── -->
+  <section class="home-news">
+    <h2 class="home-news-title">Recent news</h2>
+
+    {% include news_list.html limit=6 %}
+
+    <div class="more-news">
+      <a class="button" href="/news/">More news</a>
+    </div>
+  </section>
+
 </div>
-
-<div class="falist">
-  <ul>
-    <li>
-      <a href="{{ site.theme_settings.email_mailhide }}" target="_blank" rel="noopener" title="Email" class="social-icon-about">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-      </a>
-    </li>
-    <li>
-      <a href="https://github.com/{{ site.theme_settings.github }}" title="GitHub" class="social-icon-about">
-       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-			</a>
-    </li>
-    <li>
-      <a href="{{ site.theme_settings.linkedin }}" title="LinkedIn" class="social-icon-about">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-			</a>
-    </li>
-    <li>
-      <a href="https://twitter.com/{{ site.theme_settings.twitter }}" title="Twitter / X" class="social-icon-about">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.259 5.632L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
-      </a>
-    </li>
-    <li>
-      <a href="{{ site.theme_settings.bluesky }}" title="Bluesky" class="social-icon-about">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 600 530" fill="none" stroke="currentColor" stroke-width="40">
-  <path d="M135.72 44.03C202.216 93.951 273.74 195.17 300 249.49c26.262-54.316 97.782-155.54 164.28-205.46C512.26 8.009 590-19.862 590 68.825c0 17.712-10.155 148.79-16.111 170.07-20.703 73.984-96.144 92.854-163.25 81.433 117.3 19.964 147.14 86.092 82.697 152.22-122.39 125.59-175.91-31.511-189.63-71.766-2.514-7.38-3.69-10.832-3.708-7.896-.017-2.936-1.193.516-3.707 7.896-13.714 40.255-67.233 197.36-189.63 71.766-64.444-66.128-34.605-132.26 82.697-152.22-67.108 11.421-142.55-7.449-163.25-81.433C20.15 217.613 10 86.532 10 68.825c0-88.687 77.742-60.816 125.72-24.795z"/>
-</svg></a>
-    </li>
-    <li>
-      <a href="{{ site.theme_settings.rss }}" title="RSS" class="social-icon-about">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg>
-      </a>
-    </li>
-  </ul>
-</div>
-
-	</div>
-</section>
-</article>
 </div>

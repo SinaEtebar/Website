@@ -80,3 +80,7 @@ plugins: [jekyll-paginate]
 exclude:
   - Gemfile
   - Gemfile.lock
+  - tools
+  - node_modules
+  - package.json
+  - package-lock.json

@@ -1,76 +1,99 @@
-.photography{
-	margin: 0 auto;/*center in parent*/
+/* Photography gallery
+ *
+ * Thumbnails are displayed at a fixed size, so the markup ships 1x/2x/3x
+ * sources via <picture> rather than scaling one large file:
+ *   .landscape  one photo, height 100px, cropped by the 150x100 cell
+ *   .portrait   two photos side by side, each 73px wide
+ * Markup: photography.md + _data/photography.yml
+ */
+
+.photography {
+	margin: 0 auto; /* center in parent */
 	max-width: 40em;
 }
 
-.photography > .intro{
+.photography .intro {
 	font-size: 1.3em;
 	margin-bottom: 3em;
 }
 
-.photography > h2{
+.photography h2 {
 	font-size: 1.7em;
 	font-weight: normal;
 	margin-top: 1em;
 	margin-bottom: 0.2em;
 }
 
-.photography > .folder{
+/* One captioned group of photos, with its caption as a header above them */
+.folder-group {
+	margin: 0 0 3em;
+}
+
+.folder-group:last-of-type {
+	margin-bottom: 0;
+}
+
+.photography .folder {
 	display: block;
-	max-width: 462px; /*3x150 + 2x2 + 2x4 =*/ 
-	margin: 0 auto;	
+	max-width: 462px; /* 3x150 + 2x2 + 2x4 */
+	margin: 0 auto;
 	text-align: center;
-	font-size: 0;/*remove spaces between photos*/
+	font-size: 0; /* remove whitespace between inline-block cells */
 }
 
-.photography > .folder img{
-	margin: 0px;
-	padding: 0px;
-	/*border: 1px solid green;*/
-}
-
-/*Landscapes are 100x150, portrait 100x67, two portraits 
-will have 4px of space between, so we're at 67x2+4 = 138, so we
-need 12 px additional margin, divided by 4 (note that it's applied 
-left and right for 2 pictures)*/
-
-div .picturebox {
-	text-align: center;
-	display: inline-block;
-	/*width: 150px;*/
-	margin: 2px;
-	/*border: 1px solid green;*/
-}
-
+/* One cell of the grid: a fixed window the photo is cropped to */
 .picturebox {
+	display: inline-block;
 	width: 150px;
 	height: 100px;
+	margin: 2px;
 	overflow: hidden;
+	text-align: center;
 }
 
+.photography .folder img {
+	margin: 0;
+	padding: 0;
+}
 
-.landscape img{
+/* <picture> only carries the AVIF/WebP sources; the <img> stays the laid-out
+   box, so floats and sizing behave exactly as they did with a bare <img>. */
+.picturebox picture {
+	display: contents;
+}
+
+.landscape img {
 	height: 100px;
+	width: auto;
 }
 
-.portrait img{
-	width: 73px; /*to balance the whitespace between two portraits*/
+/* 73px keeps the whitespace between a pair of portraits balanced */
+.portrait img {
+	width: 73px;
+	height: auto;
 }
 
-.picturebox .left{
+.picturebox .left {
 	float: left;
 }
 
-
-.picturebox .right{
+.picturebox .right {
 	float: right;
 }
 
-.caption{
-	color: gray;
-	margin-top: 0.5em;
-	text-align: center;
-	font-size: 1em;
+/* Album header: sits above its photos, aligned to the grid edge */
+.caption {
 	display: block;
-	width: 100%;
+	box-sizing: border-box;
+	width: auto;
+	max-width: 462px;
+	margin: 0 auto 0.85em;
+	padding: 0 2px 0.5em; /* 2px matches the thumbnail margin */
+	text-align: left;
+	font-size: 0.78em;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	color: var(--footer-text);
+	border-bottom: 1px solid var(--border-color);
 }

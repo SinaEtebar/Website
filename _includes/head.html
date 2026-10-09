@@ -40,7 +40,10 @@
 
 	<!-- CSS -->
 	<link rel="stylesheet" href="/assets/css/main.css">
-	<link rel="stylesheet" href="/assets/css/lightbox.css">
+	<!-- lightbox.css is fetched on demand by the gallery, not on every page -->
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 	<!--Favicon-->
 	<link rel="apple-touch-icon" sizes="180x180" href="/assets/fav/apple-touch-icon.png">
@@ -50,17 +53,20 @@
     <meta name="theme-color" content="#ffffff">
 
 	<!-- Canonical -->
-	<link rel="canonical" href="{{ page.url | replace:'index.html','' | relative_url }}">
+	<link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
 
 	<!-- RSS -->
 	<link rel="alternate" type="application/atom+xml" title="{{ site.theme_settings.title }}" href="{{ "/feed.xml" | relative_url }}" />
 
-	<!-- Font Awesome -->
-	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	<!-- Font Awesome: render-blocking third-party CSS, so only on pages that use
+	     .fa icons (set "fontawesome: true" in the page's front matter). -->
+	{% if page.fontawesome %}
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	{% endif %}
 
 	<!-- Google Fonts -->
 	{% if site.theme_settings.google_fonts %}
-	<link href="//fonts.googleapis.com/css?family={{ site.theme_settings.google_fonts }}" rel="stylesheet"
+	<link href="https://fonts.googleapis.com/css?family={{ site.theme_settings.google_fonts }}&display=swap" rel="stylesheet"
 		type="text/css">
 	{% endif %}
 

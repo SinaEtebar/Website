@@ -24,7 +24,7 @@
 }
 
 .octocat:hover {
-    color: $link-color;
+    color: var(--link-color);
     text-decoration: none;
 }
 
@@ -68,17 +68,61 @@
     margin-bottom: 0em;
 }
 
+
+/* A hairline between projects so each entry reads as its own block */
+.project > section + section{
+    margin-top: 2.8em;
+    padding-top: 2.8em;
+    border-top: 1px solid var(--border-color);
+}
+
+/* One quiet line that wraps as prose: context · year */
 .project-meta{
-    font-size: 1em;
-    color: gray;
+    font-size: 0.9em;
+    color: var(--footer-text);
     margin-bottom: 0.5em;
 }
 
+.project-meta > .context,
 .project-meta > .time{
+    display: inline;
+    font-weight: normal;
 }
 
-.project-meta > .context{
-    font-weight: bold;
+.project-meta > .time{
+    white-space: nowrap;
+}
+
+.project-meta > .time::before{
+    content: "·";
+    margin: 0 0.45em;
+}
+
+/* Link row: outlined pills, same shape as the "More news" button
+   on the home page. Add more <a> elements and they line up. */
+.project-links{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    margin: 1.1em 0 0;
+}
+
+.project-links a{
+    display: inline-block;
+    padding: 0.3em 1.1em;
+    border: 1px solid var(--link-color);
+    border-radius: 2em;
+    color: var(--link-color);
+    font-size: 0.85em;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+}
+
+.project-links a:hover{
+    background: var(--link-color);
+    color: var(--bg-color);
+    text-decoration: none;
 }
 
 .project-description{
@@ -114,6 +158,7 @@
 
 .project-picturegroup>.project-picturebox>img{
     width: 100%;/*take width from parent*/
+    height: auto;/*keep the aspect ratio when width/height attributes are set*/
 }
 
 .project-picturegroup>.project-picturebox>.project-picturetext{
@@ -121,7 +166,7 @@
     width: auto;
     display: inline-block;
     text-align: justify;
-    color: gray;
+    color: var(--footer-text);
     font-size: 0.8em;
 }
 
